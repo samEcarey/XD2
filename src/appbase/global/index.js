@@ -1,16 +1,16 @@
-import React from 'react'
-import { Normalize, Milligram, Bootstrap } from '../vendors'
-import { HtmlBody } from './HtmlBody'
-import { Fonts } from './Fonts'
+import React from "react";
+import { Normalize, Milligram, Bootstrap } from "../vendors";
+import { HtmlBody } from "./HtmlBody";
+import { Fonts } from "./Fonts";
 
-export function GlobalBaseStyles(){
-  return (
+export function GlobalBaseStyles() {
+	return (
 		<>
-			<Normalize/>
+			<Normalize />
 			{/* <Milligram/> */}
 			{/* <Bootstrap/> */}
-			<HtmlBody/>
-			<Fonts/>
+			<HtmlBody />
+			<Fonts />
 		</>
-	)
+	);
 }
