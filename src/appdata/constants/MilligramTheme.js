@@ -1,0 +1,6 @@
+export const INITIAL_COLOR = "#fff"
+export const PRIMARY_COLOR = "#9b4dca"
+export const SECONDARY_COLOR = "#606c76"
+export const TERTIARY_COLOR = "#f4f5f6"
+export const QUATERNARY_COLOR = "#d1d1d1"
+export const QUINARY_COLOR = "#e1e1e1"
