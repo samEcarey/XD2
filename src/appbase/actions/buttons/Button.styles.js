@@ -2,10 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import {
 	INITIAL_COLOR,
 	PRIMARY_COLOR,
-	SECONDARY_COLOR,
-	TERTIARY_COLOR,
-	QUATERNARY_COLOR,
-	QUINARY_COLOR
+	SECONDARY_COLOR
 } from "../../../appdata";
 
 export const ButtonsStyles = createGlobalStyle`

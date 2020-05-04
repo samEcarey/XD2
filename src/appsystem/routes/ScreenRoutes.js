@@ -12,7 +12,7 @@ export const ScreenRoutes = () => {
 						return (
 							<Route
 								key={index}
-								exact
+								exact={screen.exact}
 								path={screen.routepath}
 								component={screen.component}
 							/>

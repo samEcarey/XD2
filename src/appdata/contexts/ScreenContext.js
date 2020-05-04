@@ -10,16 +10,19 @@ export const ScreenContextProvider = props => {
 	const [screens, SetScreens] = useState([
 		{
 			screenname: "Website",
+			exact: true,
 			routepath: "/",
 			component: Website
 		},
 		{
 			screenname: "Authentication",
+			exact: false,
 			routepath: "/auth",
 			component: Authentication
 		},
 		{
 			screenname: "Workspace",
+			exact: true,
 			routepath: "/workspace",
 			component: Workspace
 		}

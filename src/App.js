@@ -2,14 +2,13 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GlobalBaseStyles } from "./appbase";
 import { ScreenContextProvider } from "./appdata";
-import { ScreenRoutes, ScreenNavigation } from "./appsystem";
+import { ScreenRoutes } from "./appsystem";
 
 function App() {
 	return (
 		<Router>
 			<div className="App">
 				<GlobalBaseStyles />
-				<ScreenNavigation />
 				<ScreenContextProvider>
 					<ScreenRoutes />
 				</ScreenContextProvider>

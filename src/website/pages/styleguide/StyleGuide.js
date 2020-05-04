@@ -19,6 +19,8 @@ export function StyleGuide() {
 			<hr />
 			<ButtonDanger size="sm">Danger</ButtonDanger>
 			<br />
+			<ButtonCancel size="sm">Cancel</ButtonCancel>
+			<br />
 			<Button pill={true}>Cancel</Button>
 		</WebsiteLayout>
 	);

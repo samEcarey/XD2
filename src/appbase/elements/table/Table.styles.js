@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import {
-	PRIMARY_COLOR,
-	TERTIARY_COLOR,
-	QUINARY_COLOR,
-	QUATERNARY_COLOR
-} from "../../../appdata";
+import { PRIMARY_COLOR, TERTIARY_COLOR, QUINARY_COLOR } from "../../../appdata";
 
 export const StyledTable = styled.table`
 	margin: 0rem auto 0rem auto;

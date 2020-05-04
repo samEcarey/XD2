@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import { Screen } from "../appbase";
 
 export function Website() {
 	return (
-		<section className="Website-screen">
+		<Screen className="Website-screen" type="website">
 			<h1>Website</h1>
-		</section>
-	)
+		</Screen>
+	);
 }
