@@ -1,16 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { GlobalBaseStyles } from "./appbase";
-import { StyleGuide } from "./website";
+import { ScreenContextProvider } from "./appdata";
+import { ScreenRoutes, ScreenNavigation } from "./appsystem";
 
 function App() {
 	return (
 		<Router>
 			<div className="App">
 				<GlobalBaseStyles />
-				<Switch>
-					<Route exact path="/website/styleguide" component={StyleGuide} />
-				</Switch>
+				<ScreenNavigation />
+				<ScreenContextProvider>
+					<ScreenRoutes />
+				</ScreenContextProvider>
 			</div>
 		</Router>
 	);

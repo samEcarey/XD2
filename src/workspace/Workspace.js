@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Screen } from "../appbase";
+import { AppnavSection, AppviewSection } from "./sections";
 
 export function Workspace() {
 	return (
-		<section className="Workspace-screen">
-			<Sidebar/>
-			<Workarea/>
-		</section>
-	)
+		<Screen>
+			<div className="canvi-navbar"></div>
+			<div className="canvi-content"></div>
+			<AppnavSection />
+			<AppviewSection />
+		</Screen>
+	);
 }

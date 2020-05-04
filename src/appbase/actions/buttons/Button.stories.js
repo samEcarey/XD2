@@ -4,7 +4,7 @@ import { withA11y } from "@storybook/addon-a11y";
 // import { Button } from '@storybook/react/demo';
 import { Button } from "./Button";
 
-export const ButtonBasic = () => (
+export const ButtonPrimary = () => (
 	<Button onClick={action("clicked")}>Submit</Button>
 );
 
@@ -19,7 +19,7 @@ export default {
 	parameters: {
 		backgrounds: [
 			{ name: "twitter", value: "#00aced", default: true },
-			{ name: "facebook", value: "#3b5998" },
-		],
-	},
+			{ name: "facebook", value: "#3b5998" }
+		]
+	}
 };

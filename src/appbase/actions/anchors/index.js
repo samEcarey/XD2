@@ -1,1 +1,2 @@
-export * from './A'
+export * from "./Anchors.styles";
+export * from "./A";

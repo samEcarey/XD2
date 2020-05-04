@@ -1,9 +1,8 @@
-export * from './global'
+export * from "./global";
 
-export * from './actions'
-export * from './atoms'
-export * from './elements'
+export * from "./actions";
+export * from "./atoms";
+export * from "./elements";
+export * from "./layout";
 
-export * from './tables'
-
-export * from './widgets'
+export * from "./widgets";

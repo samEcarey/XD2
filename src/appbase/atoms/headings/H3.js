@@ -1,10 +1,3 @@
-import React from 'react'
-import { StyledH3 } from './Headings.styles'
+import styled from "styled-components";
 
-export const H3 = ({ children }) => {
-	return (
-		<StyledH3>
-			{children}
-		</StyledH3>
-	)
-}
+export const H3 = styled.h3``;
