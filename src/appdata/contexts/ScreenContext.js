@@ -12,19 +12,22 @@ export const ScreenContextProvider = props => {
 			screenname: "Website",
 			exact: true,
 			routepath: "/",
-			component: Website
+			component: Website,
+			protected: false
 		},
 		{
 			screenname: "Authentication",
 			exact: false,
 			routepath: "/auth",
-			component: Authentication
+			component: Authentication,
+			protected: false
 		},
 		{
 			screenname: "Workspace",
 			exact: true,
 			routepath: "/workspace",
-			component: Workspace
+			component: Workspace,
+			protected: true
 		}
 	]);
 

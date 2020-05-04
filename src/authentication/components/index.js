@@ -1,1 +1,2 @@
-export * from "./AuthFooter";
+export * from "./authfooter";
+export * from "./credit";

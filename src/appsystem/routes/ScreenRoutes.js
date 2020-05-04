@@ -1,30 +1,25 @@
 import React, { useContext } from "react";
 import { Switch, Route } from "react-router-dom";
-import { ScreenContext } from "../../appdata";
+import { PrivateRoute } from "../../authentication";
+
+import { Website } from "../../website";
+import { Authentication } from "../../authentication";
+import { Workspace } from "../../workspace";
 
 export const ScreenRoutes = () => {
-	const { screens } = useContext(ScreenContext);
 	return (
-		<Switch>
-			{screens.length ? (
-				<>
-					{screens.map((screen, index) => {
-						return (
-							<Route
-								key={index}
-								exact={screen.exact}
-								path={screen.routepath}
-								component={screen.component}
-							/>
-						);
-					})}
-				</>
-			) : (
-				<div>Empty Screens</div>
-			)}
-			{/* <Route exact path="/website" component={Website} /> */}
-			{/* <Route exact path="/auth" component={Authentication} /> */}
-			{/* <Route exact path="/workspace" component={Workspace} /> */}
-		</Switch>
+		<>
+			<Switch>
+				<Route exact path="/">
+					<Website />
+				</Route>
+				<Route path="/auth">
+					<Authentication />
+				</Route>
+				<PrivateRoute exact path="/workspace">
+					<Workspace />
+				</PrivateRoute>
+			</Switch>
+		</>
 	);
 };

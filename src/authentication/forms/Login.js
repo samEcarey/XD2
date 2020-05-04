@@ -1,9 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { Form, Fieldset, FieldGroup, Label } from "../../appbase";
-import { AuthFooter } from "../components";
+import { AuthFooter, Credit } from "../components";
+import { fakeAuth } from "../private";
 
 export function Login() {
+	let history = useHistory();
+	let location = useLocation();
+	let { from } = location.state || { from: { pathname: "/workspace" } };
+
+	let loginFunc = () => {
+		setTimeout(
+			() =>
+				fakeAuth.authenticate(() => {
+					history.replace(from);
+				}),
+			3000
+		);
+	};
+
 	return (
 		<Form>
 			<Fieldset>
@@ -18,11 +33,13 @@ export function Login() {
 				</FieldGroup>
 				<FieldGroup>
 					<Link to="/workspace">
-						<button>login</button>
+						<button onClick={loginFunc}>Login</button>
 					</Link>
 				</FieldGroup>
 				<FieldGroup>
 					<AuthFooter />
+					<br />
+					<Credit />
 				</FieldGroup>
 			</Fieldset>
 		</Form>

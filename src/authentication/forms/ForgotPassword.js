@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Form, Fieldset, FieldGroup, Label } from "../../appbase";
-import { AuthFooter } from "../components";
+import { AuthFooter, Credit } from "../components";
 
 export function ForgotPassword() {
 	return (
@@ -19,6 +19,8 @@ export function ForgotPassword() {
 				</FieldGroup>
 				<FieldGroup>
 					<AuthFooter />
+					<br />
+					<Credit />
 				</FieldGroup>
 			</Fieldset>
 		</Form>

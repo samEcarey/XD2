@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GlobalBaseStyles } from "./appbase";
-import { ScreenContextProvider } from "./appdata";
 import { ScreenRoutes } from "./appsystem";
 
 function App() {
@@ -9,9 +8,7 @@ function App() {
 		<Router>
 			<div className="App">
 				<GlobalBaseStyles />
-				<ScreenContextProvider>
-					<ScreenRoutes />
-				</ScreenContextProvider>
+				<ScreenRoutes />
 			</div>
 		</Router>
 	);

@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 import { LinkLogin } from "./LinkLogin";
 import { LinkRegister } from "./LinkRegister";
 import { LinkForgotPassword } from "./LinkForgotPassword";
-import { Credit } from "./Credit";
 
 function AuthFooterConditional(props) {
 	const { location } = props;
