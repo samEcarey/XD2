@@ -1,2 +1,2 @@
-export * from "./Sections.styles";
+export * from "./Section.styles";
 export * from "./Section";

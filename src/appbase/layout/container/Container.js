@@ -1,9 +1,13 @@
 import React from "react";
-import { ContainerStyled } from "./Containers.styles";
+import { ContainerStyled } from "./Container.styles";
 
-export const Container = ({ children, type, padding }) => {
+export const Container = ({ children, containername, margin, padding }) => {
 	return (
-		<ContainerStyled type={type} padding={padding}>
+		<ContainerStyled
+			className={containername + "-container"}
+			margin={margin}
+			padding={padding}
+		>
 			<>{children}</>
 		</ContainerStyled>
 	);

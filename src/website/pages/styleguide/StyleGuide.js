@@ -1,10 +1,11 @@
 import React from "react";
-import { WebsiteLayout } from "../../layouts";
+// import { WebsiteLayout } from "../../layouts";
 import { Button, ButtonDanger, ButtonCancel } from "../../../appbase";
 
 export function StyleGuide() {
 	return (
-		<WebsiteLayout>
+		<>
+			{/* <WebsiteLayout> */}
 			<button>Submit</button>
 			<br />
 			<Button>Cancel</Button>
@@ -22,6 +23,7 @@ export function StyleGuide() {
 			<ButtonCancel size="sm">Cancel</ButtonCancel>
 			<br />
 			<Button pill={true}>Cancel</Button>
-		</WebsiteLayout>
+			{/* </WebsiteLayout> */}
+		</>
 	);
 }

@@ -1,10 +1,14 @@
 import React from "react";
-import { SectionStyled } from "./Sections.styles";
+import { SectionStyled } from "./Section.styles";
 
-export const Section = ({ children, sectionname }) => {
+export const Section = ({ children, sectionname, margin, padding }) => {
 	return (
-		<SectionStyled className={sectionname + "-section"}>
-			{children}
+		<SectionStyled
+			className={sectionname + "-section"}
+			margin={margin}
+			padding={padding}
+		>
+			<>{children}</>
 		</SectionStyled>
 	);
 };

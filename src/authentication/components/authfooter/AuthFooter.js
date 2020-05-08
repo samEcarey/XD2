@@ -1,13 +1,12 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { LinkLogin } from "./LinkLogin";
 import { LinkRegister } from "./LinkRegister";
 import { LinkForgotPassword } from "./LinkForgotPassword";
 
 function AuthFooterConditional(props) {
 	const { location } = props;
-	console.log("authfooter", location.pathname);
-
+	
 	if (location.pathname === "/auth/login") {
 		return (
 			<>

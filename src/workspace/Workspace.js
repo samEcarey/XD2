@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Screen } from "../appbase";
 import { AppnavSection, AppviewSection } from "./sections";
 import { ScreenNavigation } from "../appsystem";
-import { fakeAuth, AuthSignOut, AuthNotLoggedInMsg } from "../authentication";
+import { fakeAuth, AuthSignOut } from "../authentication";
 
 export function Workspace() {
 	let history = useHistory();

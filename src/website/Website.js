@@ -1,10 +1,16 @@
 import React from "react";
-import { Screen } from "../appbase";
+import styled from "styled-components";
+import { GridWorkspace } from "../applayout";
+import { Sidebar as WorkspaceSidebar } from "./containers";
+import { Workarea as WorkspaceWorkarea } from "./containers";
 
 export function Website() {
 	return (
-		<Screen className="Website-screen" type="website">
-			<h1>Website</h1>
-		</Screen>
+		<section className="Workspace-screen">
+			<GridWorkspace className="Workspace-grid">
+				<WorkspaceSidebar />
+				<WorkspaceWorkarea />
+			</GridWorkspace>
+		</section>
 	);
 }

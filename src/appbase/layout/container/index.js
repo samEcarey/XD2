@@ -1,2 +1,2 @@
-export * from "./Containers.styles";
+export * from "./Container.styles";
 export * from "./Container";

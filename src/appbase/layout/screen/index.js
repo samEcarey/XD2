@@ -1,2 +1,2 @@
-export * from "./Screens.styles";
+export * from "./Screen.styles";
 export * from "./Screen";
