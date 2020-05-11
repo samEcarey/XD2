@@ -2,14 +2,20 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GlobalBaseStyles } from "./appbase";
 import { ScreenRoutes } from "./appsystem";
+import { GlobalStateProvider } from "./appdata/components/useGlobalStateFunc";
+import { DrawerStateProvider } from "./applayout";
 
 function App() {
 	return (
 		<Router>
-			<div className="App">
-				<GlobalBaseStyles />
-				<ScreenRoutes />
-			</div>
+			<GlobalStateProvider>
+				<DrawerStateProvider>
+					<div className="App">
+						<GlobalBaseStyles />
+						<ScreenRoutes />
+					</div>
+				</DrawerStateProvider>
+			</GlobalStateProvider>
 		</Router>
 	);
 }

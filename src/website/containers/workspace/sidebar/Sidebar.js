@@ -1,11 +1,14 @@
 import React from "react";
 import {
 	ThemeWorkspaceSidebar,
-	FlexWorkspaceSidebar
+	FlexWorkspaceSidebar,
+	DrawerLeftDesktop,
+	DrawerPushRight
 } from "../../../../applayout";
 import { Brand } from "./Brand";
 import { NavOne } from "./NavOne";
 import { NavSettings } from "./NavSettings";
+import { AppsMenu } from "../../../menus";
 
 export function Sidebar() {
 	return (
@@ -15,6 +18,16 @@ export function Sidebar() {
 					<section>
 						<Brand />
 						<NavOne />
+					</section>
+					<section>
+						<DrawerLeftDesktop>
+							<AppsMenu />
+						</DrawerLeftDesktop>
+					</section>
+					<section>
+						<DrawerPushRight>
+							<AppsMenu />
+						</DrawerPushRight>
 					</section>
 					<section>
 						<NavSettings />

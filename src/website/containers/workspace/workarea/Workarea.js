@@ -1,28 +1,63 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { MobileLeftDrawer } from "../../../../applayout";
+import { DrawerLeftMobile } from "../../../../applayout";
 import { AppsMenu } from "../../../menus";
 
+import { Main } from "./main";
+
+import { useGlobalState } from "../../../../appdata/components/useGlobalStateFunc";
+
+import useFullscreenStatus from "../../../../appsystem/hooks/fullscreen/useFullscreenStatus";
+import { FaExpandArrowsAlt } from "react-icons/fa";
+
 export function Workarea() {
+	const [state, dispatch] = useGlobalState();
+	let isFullscreen, setIsFullscreen;
+	let errorMessage;
+
+	try {
+		[isFullscreen, setIsFullscreen] = useFullscreenStatus(
+			state,
+			dispatch,
+			state.fullscreenRef
+		);
+	} catch (e) {
+		errorMessage = "Fullscreen not supported";
+		isFullscreen = false;
+		setIsFullscreen = undefined;
+	}
+
+	const handleExitFullscreen = () => document.exitFullscreen();
+
 	return (
 		<StyledSection className="Workspace-workarea">
 			<header className="Workarea-header">
 				<h1>Header</h1>
-				<MobileLeftDrawer>
+				<div className="maximizable-actions">
+					{errorMessage ? (
+						<button
+							onClick={() =>
+								alert(
+									"Fullscreen is unsupported by this browser, please try another browser."
+								)
+							}
+						>
+							{errorMessage}
+						</button>
+					) : isFullscreen ? (
+						<button onClick={handleExitFullscreen}>Exit Fullscreen</button>
+					) : (
+						// <button className="Max-button" onClick={setIsFullscreen}>
+						// 	Fullscreen
+						// </button>
+						<FaExpandArrowsAlt onClick={setIsFullscreen} />
+					)}
+				</div>
+				<DrawerLeftMobile>
 					<AppsMenu />
-				</MobileLeftDrawer>
+				</DrawerLeftMobile>
 			</header>
-			<main className="Workarea-main">
-				<h2>workarea</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-					neque assumenda et voluptatum maxime provident. Nihil vero harum iste!
-					Eaque, minima quidem aliquid iure voluptas deleniti vero laborum sunt
-					incidunt tempora fugiat enim nulla dolor voluptates officiis, quo eius
-					hic fugit excepturi unde aperiam aspernatur sapiente. Illum recusandae
-					quis eveniet.
-				</p>
-			</main>
+			<Main />
 		</StyledSection>
 	);
 }
@@ -43,8 +78,5 @@ const StyledSection = styled.section`
 			font-size: 3.4rem;
 		}
 		background: navy;
-	}
-	.Workarea-main {
-		padding: 1.5rem;
 	}
 `;

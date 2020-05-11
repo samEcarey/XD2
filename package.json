@@ -8,6 +8,7 @@
 		"@testing-library/user-event": "^7.1.2",
 		"axios": "^0.19.2",
 		"chart.js": "^2.9.3",
+		"classnames": "^2.2.6",
 		"es6-promise": "^4.2.8",
 		"framer-motion": "^1.10.3",
 		"guidechimp": "^1.5.0",
@@ -25,6 +26,7 @@
 		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.3.0",
 		"styled-components": "^5.1.0",
+		"styled-theming": "^2.2.0",
 		"uuid": "^8.0.0"
 	},
 	"scripts": {

@@ -17,6 +17,7 @@ const StyledFigure = styled.figure`
 	margin: 0rem auto 1rem auto;
 	padding: 0;
 	a {
+		display: block;
 		padding: 1rem 0.5rem 0.5rem 0.5rem;
 		background: blue;
 		border-radius: 25px;
@@ -31,6 +32,5 @@ const StyledFigure = styled.figure`
 			fill: #fff;
 			width: 34px;
 		}
-		display: block;
 	}
 `;
