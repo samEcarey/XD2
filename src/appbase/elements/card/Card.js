@@ -7,7 +7,6 @@ import {
 	Image,
 	Button
 } from "./Cards.styles";
-
 import classNames from "classnames";
 
 export function Card({ classes, children, ...restProps }) {

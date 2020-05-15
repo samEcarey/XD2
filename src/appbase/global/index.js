@@ -4,6 +4,7 @@ import { HtmlBody } from "./HtmlBody";
 import { Fonts } from "./Fonts";
 import { AnchorsStyles, ButtonsStyles } from "../actions";
 import { HeadingsStyles } from "../atoms";
+import { FiguresStyles, FormsStyles } from "../elements";
 
 export function GlobalBaseStyles() {
 	return (
@@ -13,7 +14,9 @@ export function GlobalBaseStyles() {
 			<Fonts />
 			<HeadingsStyles />
 			<AnchorsStyles />
+			<FiguresStyles />
 			<ButtonsStyles />
+			<FormsStyles />
 		</>
 	);
 }

@@ -1,3 +1,2 @@
-export * from "./flex";
 export * from "./viewports";
-export * from "./spacing";
+export * from "./skeletons";

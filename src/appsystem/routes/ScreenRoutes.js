@@ -5,6 +5,7 @@ import { PrivateRoute } from "../../authentication";
 import { Website, Framer } from "../../website";
 import { Authentication } from "../../authentication";
 import { Workspace } from "../../workspace";
+import { WorkspaceScreen } from "../../workspacescreen";
 
 export const ScreenRoutes = () => {
 	return (
@@ -20,6 +21,7 @@ export const ScreenRoutes = () => {
 				<PrivateRoute exact path="/workspace">
 					<Workspace />
 				</PrivateRoute>
+				<Route exact path="/workspacescreen" component={WorkspaceScreen} />
 			</Switch>
 		</>
 	);

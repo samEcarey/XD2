@@ -1,32 +1,29 @@
-import { css } from "styled-components";
+import { XS, SM, MD, ML, LG, XL } from "../../../appdata";
 
-//** Use */
-// import { vpMinWidth, vpMaxWidth } from '../utilities'
-// 	${ViewportAbove.sm`color: green;`}
-
-const mediaqueries = {
+export const breakpoints = {
+	//** Mobile First
 	none: "width: 100%",
-	sm: "max-width: 640px",
-	md: "max-width: 768px",
-	lg: "max-width: 1024px",
-	xl: "max-width: 1280px"
+	xs: `(min-width: ${XS}px)`,
+	sm: `(min-width: ${SM}px)`,
+	md: `(min-width: ${MD}px)`,
+	ml: `(min-width: ${ML}px)`,
+	lg: `(min-width: ${LG}px)`,
+	xl: `(min-width: ${XL}px)`,
+
+	mobile: `(min-width: ${SM}px)`,
+	tablet: `(min-width: ${MD}px)`,
+	laptop: `(min-width: ${LG}px)`,
+	desktop: `(min-width: ${XL}px)`,
+
+	xlMax: `(min-width: ${XL - 1}px)`,
+	lgMax: `(min-width: ${LG - 1}px)`,
+	mlMax: `(min-width: ${ML - 1}px)`,
+	mdMax: `(min-width: ${MD - 1}px)`,
+	smMax: `(min-width: ${SM - 1}px)`,
+	xsMax: `(min-width: ${XS - 1}px)`
 };
 
-// acc = accumulator - ViewportAbove (mobile first)
-export const vpMinWidth = Object.keys(mediaqueries).reduce((acc, label) => {
-	acc[label] = (...args) => css`
-		@media (min-width: ${mediaqueries[label]}px) {
-			${css(...args)}
-		}
-	`;
-	return acc;
-}, {});
+// Usage:
+// @media ${Breakpoints.md} { background-color: red; }
 
-export const vpMaxWidth = Object.keys(mediaqueries).reduce((acc, label) => {
-	acc[label] = (...args) => css`
-		@media (max-width: ${mediaqueries[label]}px) {
-			${css(...args)}
-		}
-	`;
-	return acc;
-}, {});
+// console.log("Breakpoints smMax", breakpoints.smMax);

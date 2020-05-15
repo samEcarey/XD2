@@ -31,7 +31,7 @@ export function Main() {
 			</p>
 			<section>
 				{movies.map(movie => (
-					<Card classes="card-workarea" key={`${movie.id}`}>
+					<Card classes="Card-workarea" key={`${movie.id}`}>
 						<Card.Image src={movie.image} title={movie.alt}></Card.Image>
 						<Card.Body>
 							<Card.Title>{movie.title}</Card.Title>

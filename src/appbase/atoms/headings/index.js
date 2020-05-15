@@ -1,4 +1,4 @@
-export * from "./Headings.styles";
+export * from "./Headings.styles.global";
 // export * from "./H1";
 export * from "./H1";
 export * from "./H2";
