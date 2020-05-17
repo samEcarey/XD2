@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputRange, ToggleSimple, ModalFramer } from "../../../appbase";
+import { InputRange, ToggleSimple, ModalFramer } from "app/common";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardGrid, Container, Header } from "./components/Elements";
 import "./assets/App.css";

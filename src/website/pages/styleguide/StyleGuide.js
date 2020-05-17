@@ -1,6 +1,5 @@
 import React from "react";
-// import { WebsiteLayout } from "../../layouts";
-import { Button, ButtonDanger, ButtonCancel } from "../../../appbase";
+import { Button, ButtonDanger, ButtonCancel } from "app/common";
 
 export function StyleGuide() {
 	return (

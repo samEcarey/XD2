@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, useHistory } from "react-router-dom";
-import { AuthRoutes } from "../appsystem";
-import { Screen } from "../appbase";
+import { AuthRoutes } from "app/config";
+import { Screen } from "app/common";
 
 import { fakeAuth, AuthSignOut, AuthNotLoggedInMsg } from "./private";
 

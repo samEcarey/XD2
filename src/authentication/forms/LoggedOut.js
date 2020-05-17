@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Form, Fieldset, FieldGroup, Label } from "../../appbase";
+import { Form, Fieldset, FieldGroup, Label } from "app/common";
 import { AuthFooter, Credit } from "../components";
 
 export function LoggedOut() {
