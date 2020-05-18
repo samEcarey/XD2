@@ -10,7 +10,7 @@ import {
 } from "../helpers/Flex.helpers";
 
 /** Flex default */
-export const FlexSC = styled.section`
+export const FlexSC = styled.div`
   display: flex;
   ${flexDirectionFunc}  /*** fd={} */
 	${justifyContentFunc} /*** jc={} */

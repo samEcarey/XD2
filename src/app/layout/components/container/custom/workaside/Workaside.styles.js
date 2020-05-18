@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SKELETON_TINT } from "appdata";
+import { SKELETON_TINT } from "app/data";
 import { breakpoints } from "app/common";
 
 /* 

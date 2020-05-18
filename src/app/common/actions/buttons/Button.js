@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { PRIMARY_COLOR, SECONDARY_COLOR } from "../../../appdata";
 
 // ${props => props.kind === "cancel" && "background: tomato"};
 // background: ${props => (props.kind === "cancel" ? "tomato" : "indigo")};
