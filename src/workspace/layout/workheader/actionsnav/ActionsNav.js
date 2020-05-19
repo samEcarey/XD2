@@ -1,8 +1,7 @@
 import React from "react";
 import { ActionsNavStyled } from "./styles";
 import { Flex } from "app/layout";
-import { DrawerLeftNav } from "./drawerleftnav";
-import { WorkspaceMenu, ApplicatonsMenu } from "workspace/modules/menus";
+import { DrawerLeftNav, DrawerAside, DrawerModuleMenus } from "./drawerleftnav";
 
 import { HoverMaxIcon } from "app/packages";
 
@@ -11,8 +10,10 @@ export function ActionsNav() {
 		<ActionsNavStyled className="Workheader-actionsnav">
 			<Flex.RowEnd>
 				<DrawerLeftNav>
-					<WorkspaceMenu />
-					<ApplicatonsMenu />
+					<Flex.Row>
+						<DrawerAside />
+						<DrawerModuleMenus />
+					</Flex.Row>
 				</DrawerLeftNav>
 				<HoverMaxIcon />
 			</Flex.RowEnd>

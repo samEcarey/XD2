@@ -1,3 +1,4 @@
-// export * from "./Toggle";
-export * from "./IconToggle";
+export * from "./FigureEdsHat";
 export * from "./Drawer";
+export * from "./DrawerAside";
+export * from "./DrawerModuleMenus";

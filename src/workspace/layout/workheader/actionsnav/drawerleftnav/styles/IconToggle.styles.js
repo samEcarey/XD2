@@ -15,8 +15,9 @@ export const IconToggleStyled = styled.svg`
 	}
 	@media (min-width: 1024px) {
 		margin-right: 1.5rem;
+		visibility: hidden;
 	}
-	@media (min-width: 1280px) {
+	/* @media (min-width: 1280px) {
 		display: none;
-	}
+	} */
 `;

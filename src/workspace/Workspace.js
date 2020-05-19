@@ -1,19 +1,17 @@
 import React from "react";
-import { Grid, Container } from "app/layout";
-import { Workaside, Workmain } from "./containers";
 import { MaximizableView } from "app/packages";
+import { Container, Grid } from "./layout";
+import { Workheader, Worksection } from "./layout";
 
 export const Workspace = () => {
 	return (
 		<MaximizableView>
-			<Grid.Workspace>
-				<Container.Workaside className="Container-workaside">
-					<Workaside />
-				</Container.Workaside>
-				<Container.Workmain className="Container-workmain">
-					<Workmain />
-				</Container.Workmain>
-			</Grid.Workspace>
+			<Container.Workspace>
+				<Grid.Workspace className="Grid-workspace">
+					<Workheader />
+					<Worksection />
+				</Grid.Workspace>
+			</Container.Workspace>
 		</MaximizableView>
 	);
 };

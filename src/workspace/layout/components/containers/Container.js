@@ -1,7 +1,14 @@
 import React from "react";
 import classNames from "classnames";
 import { ContainerSC } from "./styles";
-import { containerWorkspaceFunc, containerWorkheaderFunc } from "./functions";
+import {
+	containerWorkspaceFunc,
+	containerWorkheaderFunc,
+	containerWorksectionFunc,
+	containerWorkasideFunc,
+	containerWorkmainFunc,
+	containerMenuGroupNavFunc
+} from "./functions";
 
 export function Container({ classes, children, bg, ...restProps }) {
 	return (
@@ -20,3 +27,13 @@ Container.Workspace = containerWorkspaceFunc;
 
 /** Workheader */
 Container.Workheader = containerWorkheaderFunc;
+/** Worksection */
+Container.Worksection = containerWorksectionFunc;
+
+/** Workaside */
+Container.Workaside = containerWorkasideFunc;
+/** Workmain */
+Container.Workmain = containerWorkmainFunc;
+
+/** Menus */
+Container.MenuGroupNav = containerMenuGroupNavFunc;

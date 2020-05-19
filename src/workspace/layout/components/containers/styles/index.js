@@ -1,3 +1,10 @@
 export * from "./Container.styles";
-export * from "./ContainerWorkspace.styles";
-export * from "./ContainerWorkheader.styles";
+export * from "./workspace";
+
+export * from "./workheader";
+export * from "./worksection";
+
+export * from "./workaside";
+export * from "./workmain";
+
+export * from "./menus";

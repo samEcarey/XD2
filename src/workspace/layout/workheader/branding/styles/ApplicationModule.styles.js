@@ -10,10 +10,10 @@ export const ApplicationModuleStyled = styled.figure`
 		height: 2rem;
 	}
 	@media (min-width: 1024px) {
-		width: 20rem;
+		width: 18rem;
 		height: 2.4rem;
 		div.Skeleton-bone {
-			width: 20rem;
+			width: 18rem;
 			height: 2.4rem;
 		}
 		margin-top: 0.2rem;

@@ -19,8 +19,13 @@ export const GridWorkheaderSC = styled.header`
 		grid-template-areas: "branding agencysearch actionsnav";
 	}
 	@media (min-width: 992px) {
-		display: grid;
-		grid-template-columns: 420px auto 140px;
+		grid-template-columns: 260px auto 260px;
+	}
+	@media (min-width: 1024px) {
+		grid-template-columns: 440px auto 240px;
+	}
+	@media (min-width: 1280px) {
+		grid-template-columns: 440px auto 440px;
 	}
 	.Workheader-branding {
 		grid-area: branding;

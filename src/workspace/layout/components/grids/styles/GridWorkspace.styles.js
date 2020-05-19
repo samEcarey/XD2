@@ -6,6 +6,7 @@ export const GridWorkspaceSC = styled.section`
 	grid-auto-rows: min-content auto;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-	width: 100vw;
+	//width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 `;

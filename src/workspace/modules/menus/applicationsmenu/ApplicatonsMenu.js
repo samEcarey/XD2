@@ -1,36 +1,25 @@
 import React from "react";
-import { ApplicationsMenuStyled } from "./styles";
-import {
-	SkeletonCircle,
-	SkeletonSquare,
-	SkeletonRectangle,
-	SkeletonBone
-} from "app/common";
-import { SKELETON_TINT } from "app/data";
+import { Link } from "react-router-dom";
+import { ApplicationsMenuULStyled } from "./styles";
+import { SkeletonSquare } from "app/common";
 
 export function ApplicatonsMenu() {
 	return (
-		<ApplicationsMenuStyled>
-			<li>
-				<a href="">
-					<SkeletonSquare />
-				</a>
+		<ApplicationsMenuULStyled>
+			<li className="active">
+				<Link to="">
+					<SkeletonSquare>
+						<span>Extra Duty</span>
+					</SkeletonSquare>
+				</Link>
 			</li>
 			<li>
-				<a href="">
-					<SkeletonSquare />
-				</a>
+				<Link to="">
+					<SkeletonSquare>
+						<span>OnDuty</span>
+					</SkeletonSquare>
+				</Link>
 			</li>
-			<li>
-				<a href="">
-					<SkeletonSquare />
-				</a>
-			</li>
-			<li>
-				<a href="">
-					<SkeletonSquare />
-				</a>
-			</li>
-		</ApplicationsMenuStyled>
+		</ApplicationsMenuULStyled>
 	);
 }

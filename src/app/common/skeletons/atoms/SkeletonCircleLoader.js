@@ -15,6 +15,7 @@ const StyledSkeletonCircleLoader = styled.div`
 	padding: 0;
 	width: 4rem;
 	height: 4rem;
+
 	background-color: RED;
 	border-radius: ${SKELETON_BORDER_RADIUS_CIRCLE};
 	background: -webkit-gradient(

@@ -1,17 +1,15 @@
 import React from "react";
 import { Container, Grid } from "../components";
-import { Workaside } from "../workaside";
-import { Workmain } from "../workmain";
+import { Workaside } from "./workaside";
+import { Workmain } from "./workmain";
 
 export function Worksection() {
 	return (
-		<Grid.Worksection className="Grid-worksection">
-			<Container>
+		<Container.Worksection className="Container-worksection">
+			<Grid.Worksection className="Grid-worksection">
 				<Workaside />
-			</Container>
-			<Container>
 				<Workmain />
-			</Container>
-		</Grid.Worksection>
+			</Grid.Worksection>
+		</Container.Worksection>
 	);
 }

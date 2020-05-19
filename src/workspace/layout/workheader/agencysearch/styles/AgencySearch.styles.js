@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 export const AgencySearchNavStyled = styled.nav`
+	@media (min-width: 1024px) {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		/* background: red; */
+	}
 	form {
 		margin: 0rem 0rem 0rem 0rem;
 		padding: 0rem 0rem 0rem 0rem;
@@ -13,6 +21,18 @@ export const AgencySearchNavStyled = styled.nav`
 			width: 100%;
 			@media (min-width: 640px) {
 				width: 28rem;
+			}
+			@media (min-width: 768px) {
+				width: 32rem;
+			}
+			@media (min-width: 992px) {
+				width: 30rem;
+			}
+			@media (min-width: 1024px) {
+				width: 28rem;
+			}
+			@media (min-width: 1280px) {
+				width: 32rem;
 			}
 			svg {
 				margin-left: 0.6rem;
