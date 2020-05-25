@@ -25,7 +25,6 @@ export const StyledAuthHeader = styled.header`
 	p {
 		text-shadow: 2px 1px 1px rgba(0, 0, 0, 1);
 	}
-	@media (min-width: 640px) {
 		background-color: ${PRIMARY_COLOR};
 	}
 `;

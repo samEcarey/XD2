@@ -8,15 +8,15 @@ import { AuthMain } from "./authmain";
 
 export const Authentication = () => {
 	return (
-			<StyledScreen classes="Authentication-screen" type="auth">
-				<StyledWrapper className="AuthWrapper">
-					<StyledGrid className="Auth-grid">
-						<AuthHeader />
-						<AuthMain />
-						{/* <AuthAside /> */}
-						{/* <AuthFooter /> */}
-					</StyledGrid>
-				</StyledWrapper>
-			</StyledScreen>
+		<StyledScreen classes="Authentication-screen" type="auth">
+			<StyledWrapper className="AuthWrapper">
+				<StyledGrid className="Auth-grid">
+					<AuthHeader />
+					<AuthMain />
+					{/* <AuthAside /> */}
+					{/* <AuthFooter /> */}
+				</StyledGrid>
+			</StyledWrapper>
+		</StyledScreen>
 	);
 };
