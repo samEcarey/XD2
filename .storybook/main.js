@@ -1,6 +1,6 @@
 module.exports = {
 	stories: [
-		"../src/appbase/**/*.stories.js",
+		"../src/**/*.stories.js"
 		//'../src/**/*.stories.(js|mdx)'
 	],
 	addons: [
@@ -9,8 +9,8 @@ module.exports = {
 		"@storybook/addon-docs",
 		"@storybook/addon-storysource",
 		"@storybook/addon-backgrounds/register",
-		"@storybook/addon-a11y/register",
+		"@storybook/addon-a11y/register"
 		// '@storybook/addon-viewport/register'
 		// '@storybook/addon-docs'
-	],
+	]
 };
