@@ -8,7 +8,10 @@ export const ModuleContentStyled = styled.div`
 	margin: 0rem 0rem 0rem -30rem;
 	padding: 5rem 5rem 5rem 5rem;
 	transition: all 0.3s ease-in;
-
+	// -webkit-transform: translateX(0px);
+    // -ms-transform: translateX(0px);
+	// transform: translateX(0px);
+	
 	&:after {
 		content: "";
 		position: absolute;

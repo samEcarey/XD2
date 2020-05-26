@@ -9,6 +9,35 @@ export const AgencySearchNavStyled = styled.nav`
 		align-items: center;
 		/* background: red; */
 	}
+	&.Skeleton-Workheader-agencysearch {
+		.Form-group {
+			background-color: RED;
+			background: -webkit-gradient(
+				linear,
+				left top,
+				right top,
+				color-stop(8%, RED),
+				color-stop(18%, rgba(130, 130, 130, 0.3)),
+				color-stop(33%, RED)
+			);
+			background: linear-gradient(
+				to right,
+				RED 8%,
+				rgba(130, 130, 130, 0.3) 18%,
+				RED 33%
+			);
+			background-size: 800px 100px;
+			animation: wave-squares 2s infinite ease-out;
+			@keyframes wave-squares {
+				0% {
+					background-position: -468px 0;
+				}
+				100% {
+					background-position: 468px 0;
+				}
+			}
+		}
+	}
 	form {
 		margin: 0rem 0rem 0rem 0rem;
 		padding: 0rem 0rem 0rem 0rem;

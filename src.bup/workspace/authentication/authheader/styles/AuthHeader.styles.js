@@ -14,6 +14,7 @@ export const StyledAuthHeader = styled.header`
 	color: white;
 	text-align: center;
 	background-color: TRANSPARENT;
+	background-color: ${PRIMARY_COLOR};
 	border-top-right-radius: ${BORDER_RADIUS};
 	border-top-left-radius: ${BORDER_RADIUS};
 	@media (min-width: 640px) {
@@ -25,7 +26,20 @@ export const StyledAuthHeader = styled.header`
 	p {
 		text-shadow: 2px 1px 1px rgba(0, 0, 0, 1);
 	}
-	@media (min-width: 640px) {
-		background-color: ${PRIMARY_COLOR};
+	.brand-area,
+	.tagline,
+	.value-proposition {
+		@media (min-width: 1280px) {
+			display: none;
+		}
+	}
+	figure.authheader-illustration {
+		display: none;
+		@media (min-width: 1280px) {
+			display: block;
+			svg {
+				width: 400px;
+			}
+		}
 	}
 `;

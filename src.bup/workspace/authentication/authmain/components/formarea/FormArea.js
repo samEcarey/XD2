@@ -1,5 +1,6 @@
 import React from "react";
+import { StyledFormArea } from "../../styles";
 
 export const FormArea = ({ children }) => {
-	return <div classname="Form-area">{children}</div>;
+	return <StyledFormArea classname="Form-area">{children}</StyledFormArea>;
 };

@@ -2,8 +2,7 @@ import React from "react";
 
 const appGlobalState = {
 	isFullscreen: false,
-	fullscreenRef: null,
-	isAgencyOverlay: false
+	fullscreenRef: null
 };
 
 const globalStateContext = React.createContext(appGlobalState);

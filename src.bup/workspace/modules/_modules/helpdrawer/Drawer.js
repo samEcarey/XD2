@@ -22,7 +22,7 @@ export const Drawer = ({ children, helpDrawerOpen }) => {
 };
 
 const StyledDrawer = styled(motion.section)`
-	z-index: 9999;
+	z-index: 5;
 	position: absolute;
 	top: 0;
 	right: 0;

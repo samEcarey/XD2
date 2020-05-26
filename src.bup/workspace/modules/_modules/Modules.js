@@ -4,10 +4,8 @@ import {
 	ModuleAside,
 	ModuleContent,
 	Overlay,
-	ModuleAsideToggleButton,
+	ModuleHeader,
 	ModuleMain,
-	OverlayAgency,
-	Help
 } from "./components";
 import { HelpDrawer } from "./helpdrawer";
 
@@ -45,11 +43,9 @@ export class Modules extends React.Component {
 			<ModuleStyled>
 				<ModuleAside brand="ONDUTY" />
 				<ModuleContent>
-					<ModuleAsideToggleButton toggleSidebar={this.toggleSidebar} />
+					<ModuleHeader toggleSidebar={this.toggleSidebar} sidebarIsOpen={this.state.sidebarIsOpen} />
 					<ModuleMain />
 					<Overlay toggleSidebar={this.toggleSidebar} />
-					<Help />
-					<OverlayAgency />
 				</ModuleContent>
 			</ModuleStyled>
 		);

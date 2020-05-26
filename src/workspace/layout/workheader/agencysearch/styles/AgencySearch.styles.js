@@ -44,7 +44,7 @@ export const AgencySearchNavStyled = styled.nav`
 		/* border: 1px solid black; */
 		.Form-group {
 			margin: 0rem 0rem 0rem 0rem;
-			padding: 0.3rem 0rem 0rem 0rem;
+			padding: 0rem 0rem 0rem 0rem;
 			background: rgba(26, 29, 31, 0.2);
 			border-radius: 2.5rem;
 			width: 100%;
@@ -77,6 +77,65 @@ export const AgencySearchNavStyled = styled.nav`
 					color: rgba(26, 29, 31, 0.2);
 				}
 			}
+		}
+		/* Flashing Cursor */
+		.caret {
+			height: 45px;
+			display: block;
+			width: 100%;
+			.caret-content {
+				height: 100%;
+				display: block;
+				padding: 10px 20px;
+				position: relative;
+				text-align: center;
+				&:after {
+					content: "";
+					display: table;
+					clear: both;
+				}
+				.caret-place-holder {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					color: #fff;
+					font-size: 18px;
+					padding: 10px 20px;
+					display: inline-block;
+					transition: all .4s;
+					&.hide { transform: scale(0); opacity: 0; }
+				}
+				.input-content {
+					font-size: 18px;
+					vertical-align: top;
+					padding-top: 4px;
+					display: inline-block;
+					height: 100%;
+					color: #fff;
+				}
+				.input-caret {
+					padding: 4px 5px;
+					width: 0;
+					height: 100%;
+					background: #fff;
+					display: none;
+					&.bling {
+						display: inline-block;
+						animation: caret-bling 1s infinite, caret-scale .4s;
+					}
+				}
+				.hidden-input { width: 0; height: 0; opacity: 0; }
+			}
+		}
+		@keyframes caret-bling {
+			0% { opacity: 1; }
+			100% { opacity: 0; }
+		}
+		@keyframes caret-scale {
+			0% { opacity: 0; transform: scaleX(15) scaleY(5); }
+			100% { opacity: 1; transform: scaleX(1) scaleY(1); }
 		}
 	}
 `;

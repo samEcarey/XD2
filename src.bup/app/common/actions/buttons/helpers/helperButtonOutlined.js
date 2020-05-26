@@ -3,12 +3,17 @@ import {
 	PRIMARY_COLOR,
 	SECONDARY_COLOR,
 	MEDIUM_COLOR,
-	MEDIUM_TINT
+	MEDIUM_TINT,
+	COLOR_WHITE
 } from "app/constants";
 
 export const helperButtonOutlined = css`
 	background-color: transparent;
 	color: ${PRIMARY_COLOR};
+	&.alt {
+		border-color: ${SECONDARY_COLOR};
+		color: ${COLOR_WHITE} !important;
+	}
 `;
 
 export const helperButtonOutlinedHover = css`

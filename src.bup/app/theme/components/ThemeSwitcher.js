@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import THEMES from "../themeList";
-import { AppContext } from "context";
+import { AppContext } from "app/data";
 
 import { saveToStorage } from "app/data/localstorage/localStorage";
 

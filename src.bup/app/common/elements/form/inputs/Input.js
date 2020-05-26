@@ -72,8 +72,8 @@ export function Input({
 				value={value}
 				onChange={e => setValue(e.target.value)}
 			/>
-			<small>{alertMessage}</small>
-			<p>{value}</p>
+			{/* <small>{alertMessage}</small> */}
+			{/* <p>{value}</p> */}
 		</>
 	);
 }

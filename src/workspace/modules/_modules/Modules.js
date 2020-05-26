@@ -7,10 +7,22 @@ import {
 	ModuleHeader,
 	ModuleMain,
 } from "./components";
-import { HelpDrawer } from "./helpdrawer";
 
 export class Modules extends React.Component {
-	state = { sidebarIsOpen: false };
+	state = { 
+		sidebarIsOpen: false,
+		moduleLeftSidebar: "closed",  // "open", "closed", "none"   
+	};
+
+	componentDidMount() {
+		const body = document.getElementsByTagName("article")[0];
+		window.addEventListener('resize', () => {
+			if(window.innerWidth < 1024) {
+				body.classList.remove("open");
+				this.setState({ sidebarIsOpen: false });
+			}
+		}, false);
+	}
 
 	toggleSidebar = () => {
 		const body = document.getElementsByTagName("article")[0];

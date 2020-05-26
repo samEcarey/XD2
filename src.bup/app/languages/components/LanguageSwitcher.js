@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { LOCALES } from "../locales";
-import { AppContext } from "context";
+import { AppContext } from "app/data";
 
 import { saveToStorage } from "app/data/localstorage/localStorage";
 

@@ -3,6 +3,7 @@ import { Button } from "./Button";
 
 export const StyledButton = styled.button`
 	/* ${props => props.pill === true && "border-radius: 16px;"}; */
+	/* ${props => props.fullwidth === true && "display: block;"}; */
 `;
 
 // Testing extending/inheritting, it works

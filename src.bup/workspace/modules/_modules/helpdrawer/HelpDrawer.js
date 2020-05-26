@@ -4,7 +4,11 @@ import { Flex } from "app/layout";
 import { Drawer } from "./Drawer";
 import { BrandEdsHatIcon } from "./BrandEdsHatIcon";
 
+
+
 export function HelpDrawer({ children }) {
+	
+
 	const [helpDrawerOpen, setHelpDrawerOpen] = useState(false);
 
 	const handleToggle = () => {

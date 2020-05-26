@@ -3,13 +3,13 @@ import { StyledTagline } from "./Tagline.styles";
 
 export const Tagline = ({ tagtop, reg, tagbottom }) => {
 	return (
-		<StyledTagline class="tagline">
+		<StyledTagline className="tagline">
 			<div class="tag-top">
 				{tagtop}
 				<sup>{reg}</sup>
 			</div>
-			<div class="hr"></div>
-			<div class="tag-bottom">{tagbottom}</div>
+			<div className="hr"></div>
+			<div className="tag-bottom">{tagbottom}</div>
 		</StyledTagline>
 	);
 };

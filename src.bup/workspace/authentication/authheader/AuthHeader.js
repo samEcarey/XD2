@@ -1,14 +1,15 @@
 import React from "react";
-import { StyledAuthHeader, StyledBrandFigure } from "./styles";
-import { Tagline, ValueProposition } from "./components";
-import { IconEdsHat } from "app/assets";
+import { StyledAuthHeader } from "./styles";
+import { BrandArea, Tagline, ValueProposition } from "./components";
+import { IllForgotPassword001, IllSecureLogin001 } from "app/assets";
 
 export const AuthHeader = () => {
 	return (
 		<StyledAuthHeader className="Authentication-header">
-			<StyledBrandFigure>
-				<IconEdsHat />
-			</StyledBrandFigure>
+			<figure className="authheader-illustration">
+				<IllSecureLogin001 />
+			</figure>
+			<BrandArea />
 			<Tagline tagtop="Extra Duty" reg="®️" tagbottom="Done Right" />
 			<ValueProposition
 				lead="Extra Duty Support for Law Enforcement Agencies"

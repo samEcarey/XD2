@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { breakpoints } from "app/common";
+import { Breakpoints } from "app/common";
 
-// @media ${breakpoints.lg} {}
+// @media ${Breakpoints.lg} {}
 
 export const AppIconStyled = styled.figure`
 	display: none;
@@ -10,7 +10,7 @@ export const AppIconStyled = styled.figure`
 	@media (min-width: 375px) {
 		display: inline-block;
 	}
-	@media (min-width: 1024px) {
+	@media ${Breakpoints.lg} {
 		margin: 0rem 3rem 0rem 0rem;
 		padding: 0rem 0rem 0rem 0rem;
 	}
@@ -20,6 +20,4 @@ export const AppIconStyled = styled.figure`
 		width: 4.5rem;
 		height: 4.5rem;
 	}
-	/* @media (min-width: 1024px) { } */
-	/* background: green; */
 `;
