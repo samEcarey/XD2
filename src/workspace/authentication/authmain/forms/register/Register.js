@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Form, Fieldset, Legend, FieldGroup, Label } from "app/common";
+import { Form, Fieldset, Legend, FieldGroup } from "app/common";
+import { RegisterButtonNext } from "./RegisterButtonNext";
+import { RegisterButtonPrev } from "./RegisterButtonPrev";
 import { RegisterStep1 } from "./RegisterStep1";
 import { RegisterStep2 } from "./RegisterStep2";
 
@@ -20,26 +21,24 @@ export function Register() {
 	return (
 		<Form>
 			<Fieldset>
-				<Legend>Register an account</Legend>
+				<Legend>Register</Legend>
 
 				{isNextStep === false ? <RegisterStep1 /> : <RegisterStep2 />}
 
 				<FieldGroup>
 					{isNextStep === true ? (
-						<button onClick={e => handlePrevStep(e)}>Previous</button>
+						<RegisterButtonPrev handlePrevStep={handlePrevStep} />
 					) : (
-						<button onClick={e => handleNextStep(e)}>Next</button>
+						<RegisterButtonNext handleNextStep={handleNextStep} />
 					)}
 				</FieldGroup>
 
 				<FieldGroup>
-					<Link to="/workspace">
-						{isNextStep === true ? (
-							<button>Register</button>
-						) : (
-							<button disabled>Register</button>
-						)}
-					</Link>
+					{isNextStep === true ? (
+						<button className="button-secondary">Register</button>
+					) : (
+						<button disabled>Register</button>
+					)}
 				</FieldGroup>
 			</Fieldset>
 		</Form>

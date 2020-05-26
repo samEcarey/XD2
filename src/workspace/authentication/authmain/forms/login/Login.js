@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import { Form, Fieldset, Legend, FieldGroup, Label, Input } from "app/common";
-import { fakeAuth } from "../private";
+import {
+	Form,
+	Fieldset,
+	Legend,
+	FieldGroup,
+	FieldGroupLoginCheckbox,
+	Label,
+	Input,
+	Button
+} from "app/common";
+import { fakeAuth } from "../../private";
 
 export function Login() {
 	const [loading, setLoading] = useState("");
@@ -24,12 +33,13 @@ export function Login() {
 	return (
 		<Form>
 			<Fieldset>
-				<Legend>Login to Extra Duty Solutions</Legend>
+				<Legend>Login</Legend>
 				<FieldGroup>
 					<Label htmlFor="username">Username</Label>
 					<Input
 						type="text"
 						name="username"
+						placeholder="Enter your username"
 						alertMessage="Alert message text"
 					/>
 				</FieldGroup>
@@ -38,21 +48,25 @@ export function Login() {
 					<Input
 						type="password"
 						name="password"
+						placeholder="Enter your password"
 						alertMessage="Alert message text"
 					/>
 				</FieldGroup>
+				<FieldGroupLoginCheckbox classes="fieldgroup-checkbox">
+					<div className="checkbox-left">
+						<Input type="checkbox" name="remember" />
+					</div>
+					<div className="checkbox-right">
+						<Label htmlFor="remember">Remember me</Label>
+					</div>
+				</FieldGroupLoginCheckbox>
 				<FieldGroup>
-					<Label htmlFor="remember">Remember me</Label>
-					<Input
-						type="checkbox"
-						name="remember"
-						alertMessage="Alert message text"
-					/>
-				</FieldGroup>
-				<FieldGroup>
-					<Link to="/workspace">
-						<button onClick={e => loginFunc(e)}>Login</button>
-					</Link>
+					<button
+						className="button-secondary button-pill"
+						onClick={e => loginFunc(e)}
+					>
+						Login
+					</button>
 					<div id="loading">{loading}</div>
 				</FieldGroup>
 			</Fieldset>

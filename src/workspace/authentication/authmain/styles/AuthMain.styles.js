@@ -6,8 +6,8 @@ export const StyledAuthMain = styled.main`
 	margin: 0rem;
 	padding: 1.5rem 0rem 0rem 0rem;
 	color: ${COLOR_WHITE};
-	border-bottom-right-radius: ${BORDER_RADIUS};
-	border-bottom-left-radius: ${BORDER_RADIUS};
+	/* border-bottom-right-radius: ${BORDER_RADIUS};
+	border-bottom-left-radius: ${BORDER_RADIUS}; */
 	@media (min-width: 768px) {
 		display: flex;
 		flex-direction: column;
@@ -18,6 +18,7 @@ export const StyledAuthMain = styled.main`
 		color: ${PRIMARY_SHADE};
 		background: ${COLOR_WHITE};
 		border-top-right-radius: ${BORDER_RADIUS};
+		border-bottom-right-radius: ${BORDER_RADIUS};
 		border-bottom-left-radius: 0rem;
 	}
 `;

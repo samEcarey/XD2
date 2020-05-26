@@ -1,5 +1,8 @@
 import React from "react";
+import { StyledMessageArea } from "../../styles";
 
 export const MessageArea = ({ children }) => {
-	return <div classname="Message-area">{children}</div>;
+	return (
+		<StyledMessageArea classname="Message-area">{children}</StyledMessageArea>
+	);
 };

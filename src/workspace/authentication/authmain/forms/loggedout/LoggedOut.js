@@ -11,9 +11,7 @@ export function LoggedOut() {
 					<Label>Your have successfullyy logged out</Label>
 				</FieldGroup>
 				<FieldGroup>
-					<Link to="workspace/auth/login">
-						<button>Login</button>
-					</Link>
+					<button>Login</button>
 				</FieldGroup>
 			</Fieldset>
 		</Form>

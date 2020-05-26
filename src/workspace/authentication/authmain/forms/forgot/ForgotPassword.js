@@ -6,15 +6,13 @@ export function ForgotPassword() {
 	return (
 		<Form>
 			<Fieldset>
-				<Legend>Enter your email</Legend>
+				<Legend>Forgotten Password</Legend>
 				<FieldGroup>
 					<Label htmlFor="email">Email</Label>
-					<input type="text" name="username" />
+					<input type="text" name="username" placeholder="Enter your email" />
 				</FieldGroup>
 				<FieldGroup>
-					<Link to="/workspace">
-						<button>Get password</button>
-					</Link>
+					<button className="button-secondary">Get password</button>
 				</FieldGroup>
 			</Fieldset>
 		</Form>
