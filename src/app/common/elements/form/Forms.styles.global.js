@@ -10,6 +10,7 @@ export const FormFieldStyles = createGlobalStyle`
 		input[type='tel'],
 		input[type='text'],
 		input[type='url'],
+		input[type='date'],
 		textarea,
 		select {
 			/* Removes awkward default styles on some inputs for iOS */

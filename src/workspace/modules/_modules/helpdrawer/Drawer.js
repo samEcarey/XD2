@@ -1,15 +1,15 @@
 import React from "react";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-
-const variants = {
-	open: { x: 0 },
-	closed: { x: "100%", overflow: "hidden" }
-};
+import { DrawerStyled } from "./styles"
 
 export const Drawer = ({ children, helpDrawerOpen }) => {
+
+	const variants = {
+		open: { x: 0 },
+		closed: { x: "100%", overflow: "hidden" }
+	};
+
 	return (
-		<StyledDrawer
+		<DrawerStyled
 			className="Drawer-help"
 			variants={variants}
 			initial="closed"
@@ -17,24 +17,6 @@ export const Drawer = ({ children, helpDrawerOpen }) => {
 			transition={{ damping: 300 }}
 		>
 			{children}
-		</StyledDrawer>
+		</DrawerStyled>
 	);
 };
-
-const StyledDrawer = styled(motion.section)`
-	z-index: 5;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 300px;
-	height: 100%;
-
-	padding: 1.5rem;
-	background-color: Green;
-	button {
-		all: revert;
-		cursor: pointer;
-	}
-	nav {
-	}
-`;

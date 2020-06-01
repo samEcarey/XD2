@@ -14,6 +14,9 @@ export const UserActionsNav = ({ children }) => {
 					<IconAddCircle />
 				</li>
 				<li>
+					<IconAddSquare />
+				</li>
+				<li>
 					<IconLogOff />
 				</li>
 			</ul>

@@ -1,17 +1,14 @@
 import React from "react";
 import { ModuleStyled } from "./styles";
-import {
-	ModuleAside,
-	ModuleContent,
-	Overlay,
-	ModuleHeader,
-	ModuleMain,
-} from "./components";
+import { ModuleContent, Overlay } from "./components";
+import { ModuleAside } from "./moduleaside"
+import { ModuleHeader } from "./moduleheader"
+import { ModuleMain } from "./modulemain"
 
 export class Modules extends React.Component {
 	state = { 
 		sidebarIsOpen: false,
-		moduleLeftSidebar: "closed",  // "open", "closed", "none"   
+		//moduleLeftSidebar: "closed",  // "open", "closed", "none"   
 	};
 
 	componentDidMount() {
@@ -34,8 +31,6 @@ export class Modules extends React.Component {
 			this.setState({ sidebarIsOpen: true });
 			body.classList.add("open");
 			overlay.style.display = "block";
-			//Allow sufficient time for display = "block" to take effect before
-			//adding .active (in order for the transition to work);
 			setTimeout(() => {
 				overlay.classList.add("active");
 			}, 100);
@@ -43,7 +38,6 @@ export class Modules extends React.Component {
 			this.setState({ sidebarIsOpen: false });
 			body.classList.remove("open");
 			overlay.classList.remove("active");
-			//Set it back to display: block once the transition is complete.
 			setTimeout(() => {
 				overlay.style.display = "none";
 			}, 350);

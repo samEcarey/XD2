@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ApplicationsMenuULStyled } from "./styles";
+import { IconMore } from "./assets";
 import { SkeletonSquare, SkeletonSquareLoader } from "app/common";
 
 export function ApplicatonsMenu() {
@@ -19,7 +20,8 @@ export function ApplicatonsMenu() {
 
 	return (
 		<ApplicationsMenuULStyled>
-			{loading ?
+			<IconMore />
+			{/* {loading ?
 			<>
 			<li className="active">
 				<Link to="">
@@ -49,7 +51,7 @@ export function ApplicatonsMenu() {
 				</Link>
 			</li>
 			</>
-		}
+		} */}
 		</ApplicationsMenuULStyled>
 	);
 }

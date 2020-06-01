@@ -26,8 +26,7 @@ export const ApplicationsMenuULStyled = styled.ul`
 					/* background: red; */
 				}
 			}
-			/* background: green; */
 		}
 	}
-	/* background: green; */
+	
 `;

@@ -1,17 +1,14 @@
 import styled from "styled-components";
+import { PRIMARY_COLOR } from "app/constants"
 
 export const ModuleContentStyled = styled.div`
-	color: WHITE;
-	background-color: #232323;
+	background-color: ${PRIMARY_COLOR};
 
 	position: relative;
 	margin: 0rem 0rem 0rem -30rem;
-	padding: 5rem 5rem 5rem 5rem;
+	padding: 1.3rem 2rem 1.3rem 2rem;
 	transition: all 0.3s ease-in;
-	// -webkit-transform: translateX(0px);
-    // -ms-transform: translateX(0px);
-	// transform: translateX(0px);
-	
+
 	&:after {
 		content: "";
 		position: absolute;
@@ -22,5 +19,6 @@ export const ModuleContentStyled = styled.div`
 		-webkit-backdrop-filter: blur(0px);
 		backdrop-filter: blur(0px);
 		transition: all 0.3s ease-in;
+		display: none;
 	}
 `;

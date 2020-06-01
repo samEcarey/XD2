@@ -12,6 +12,9 @@ export const UserActionsNavStyled = styled.nav`
 		li {
 			list-style: none;
 			margin-bottom: 1.5rem;
+			&:last-child {
+				margin-top: 5rem;
+			}
 		}
 	}
 	/* background: red; */

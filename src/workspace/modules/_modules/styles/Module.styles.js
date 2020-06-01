@@ -11,6 +11,7 @@ export const ModuleStyled = styled.article`
 			&:after {
 				-webkit-backdrop-filter: blur(10px);
 				backdrop-filter: blur(10px);
+				display: block;
 			}
 		}
 		&#sidebar-toggle-button:before,

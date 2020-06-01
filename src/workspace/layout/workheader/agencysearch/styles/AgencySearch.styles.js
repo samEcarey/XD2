@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { WHITE_COLOR, PRIMARY_COLOR, PRIMARY_TINT, PRIMARY_SHADE } from "app/constants"
 
 export const AgencySearchNavStyled = styled.nav`
 	@media (min-width: 1024px) {
@@ -7,7 +8,6 @@ export const AgencySearchNavStyled = styled.nav`
 		justify-content: center;
 		align-content: center;
 		align-items: center;
-		/* background: red; */
 	}
 	&.Skeleton-Workheader-agencysearch {
 		.Form-group {
@@ -41,11 +41,12 @@ export const AgencySearchNavStyled = styled.nav`
 	form {
 		margin: 0rem 0rem 0rem 0rem;
 		padding: 0rem 0rem 0rem 0rem;
+		width: 100%;
 		/* border: 1px solid black; */
 		.Form-group {
 			margin: 0rem 0rem 0rem 0rem;
 			padding: 0rem 0rem 0rem 0rem;
-			background: rgba(26, 29, 31, 0.2);
+			background: ${PRIMARY_SHADE};
 			border-radius: 2.5rem;
 			width: 100%;
 			@media (min-width: 640px) {
@@ -61,7 +62,8 @@ export const AgencySearchNavStyled = styled.nav`
 				width: 28rem;
 			}
 			@media (min-width: 1280px) {
-				width: 32rem;
+				//width: 32rem;
+				width: 100%;
 			}
 			svg {
 				margin-left: 0.6rem;
@@ -72,9 +74,9 @@ export const AgencySearchNavStyled = styled.nav`
 				width: 100%;
 				border-radius: 0rem;
 				border: none;
-				color: rgba(26, 29, 31, 0.4);
+				color: ${PRIMARY_TINT};
 				&::placeholder {
-					color: rgba(26, 29, 31, 0.2);
+					color: ${PRIMARY_TINT};
 				}
 			}
 		}
@@ -88,7 +90,7 @@ export const AgencySearchNavStyled = styled.nav`
 				display: block;
 				padding: 10px 20px;
 				position: relative;
-				text-align: center;
+				text-align: left;
 				&:after {
 					content: "";
 					display: table;
@@ -100,26 +102,28 @@ export const AgencySearchNavStyled = styled.nav`
 					left: 0;
 					right: 0;
 					bottom: 0;
-					color: #fff;
+					color: ${PRIMARY_TINT};
 					font-size: 18px;
+					font-weight: bold;
 					padding: 10px 20px;
 					display: inline-block;
 					transition: all .4s;
 					&.hide { transform: scale(0); opacity: 0; }
 				}
 				.input-content {
-					font-size: 18px;
+					font-size: 1.5rem;
 					vertical-align: top;
 					padding-top: 4px;
 					display: inline-block;
 					height: 100%;
-					color: #fff;
+					font-weight: bold;
+					color: ${PRIMARY_TINT};
 				}
 				.input-caret {
 					padding: 4px 5px;
 					width: 0;
 					height: 100%;
-					background: #fff;
+					background: ${PRIMARY_TINT};
 					display: none;
 					&.bling {
 						display: inline-block;
