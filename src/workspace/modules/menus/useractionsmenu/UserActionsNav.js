@@ -16,9 +16,6 @@ export const UserActionsNav = ({ children }) => {
 				<li>
 					<IconAddSquare />
 				</li>
-				<li>
-					<IconLogOff />
-				</li>
 			</ul>
 		</UserActionsNavStyled>
 	);

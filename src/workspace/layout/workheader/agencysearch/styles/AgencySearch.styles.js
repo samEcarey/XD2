@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import { WHITE_COLOR, PRIMARY_COLOR, PRIMARY_TINT, PRIMARY_SHADE } from "app/constants"
+import { Breakpoints } from "app/common";
+import { WHITE_COLOR, PRIMARY_COLOR, PRIMARY_TINT, PRIMARY_SHADE, GREY_950 } from "app/constants"
 
 export const AgencySearchNavStyled = styled.nav`
-	@media (min-width: 1024px) {
+	display: none;
+	@media ${Breakpoints.lg} {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -42,31 +44,14 @@ export const AgencySearchNavStyled = styled.nav`
 		margin: 0rem 0rem 0rem 0rem;
 		padding: 0rem 0rem 0rem 0rem;
 		width: 100%;
-		/* border: 1px solid black; */
 		.Form-group {
 			margin: 0rem 0rem 0rem 0rem;
 			padding: 0rem 0rem 0rem 0rem;
-			background: ${PRIMARY_SHADE};
-			border-radius: 2.5rem;
+			background: ${GREY_950};
+			border-radius: 5rem;
 			width: 100%;
-			@media (min-width: 640px) {
-				width: 28rem;
-			}
-			@media (min-width: 768px) {
-				width: 32rem;
-			}
-			@media (min-width: 992px) {
-				width: 30rem;
-			}
-			@media (min-width: 1024px) {
-				width: 28rem;
-			}
-			@media (min-width: 1280px) {
-				//width: 32rem;
-				width: 100%;
-			}
 			svg {
-				margin-left: 0.6rem;
+				margin-left: 2rem;
 			}
 			input {
 				margin: 0rem 0rem 0rem 0rem;
@@ -82,15 +67,16 @@ export const AgencySearchNavStyled = styled.nav`
 		}
 		/* Flashing Cursor */
 		.caret {
-			height: 45px;
+			height: 6rem;
 			display: block;
 			width: 100%;
 			.caret-content {
 				height: 100%;
 				display: block;
-				padding: 10px 20px;
+				padding: 1rem;
 				position: relative;
 				text-align: left;
+				line-height: 4rem;
 				&:after {
 					content: "";
 					display: table;
@@ -103,9 +89,9 @@ export const AgencySearchNavStyled = styled.nav`
 					right: 0;
 					bottom: 0;
 					color: ${PRIMARY_TINT};
-					font-size: 18px;
+					font-size: 2rem;
 					font-weight: bold;
-					padding: 10px 20px;
+					padding: 1rem;
 					display: inline-block;
 					transition: all .4s;
 					&.hide { transform: scale(0); opacity: 0; }

@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { IconAngleDoubleRight, IconAdd } from "../assets";
+import { MenuGroupMenuStyled } from "../styles";
 
 export function MenuGroupMenu({ one, two, three, four }) {
 	return (
-		<div className="MenuGroupNav-menu">
+		<MenuGroupMenuStyled className="MenuGroupNav-menu">
 			<ul>
 				<li>
 					<IconAdd />
@@ -25,6 +26,6 @@ export function MenuGroupMenu({ one, two, three, four }) {
 					<Link to="">{four}</Link>
 				</li>
 			</ul>
-		</div>
+		</MenuGroupMenuStyled>
 	);
 }

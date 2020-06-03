@@ -1,6 +1,6 @@
 //****** EDS Colors *******/
 
-export const PRIMARY_SHADE = "#0c0f18"; //0c0f18 //002040  // After replace first mockup, I have used 0c0f18 color as shade insted of 002040
+export const PRIMARY_SHADE = "#002040"; 
 export const PRIMARY_COLOR = "#002b57";
 export const PRIMARY_TINT = "#004C9B";
 

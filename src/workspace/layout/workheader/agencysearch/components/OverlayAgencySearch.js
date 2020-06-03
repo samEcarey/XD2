@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { OverlayAgencySearchStyled } from "../styles";
 import { AgencySearchResults } from "./AgencySearchResults"
 
 
@@ -19,7 +20,7 @@ export const OverlayAgencySearch = (props) => {
 
 	return (
 		
-		<AgencySearchOverlayStyled
+		<OverlayAgencySearchStyled
 			className="Agency-search-overlay"
 			variants={overlay}
 			initial={false}
@@ -44,31 +45,18 @@ export const OverlayAgencySearch = (props) => {
 			
 			<AgencySearchResults {...props} />
 			
-		</AgencySearchOverlayStyled>
+		</OverlayAgencySearchStyled>
 		
 	);
 };
 
-
-
-const AgencySearchOverlayStyled = styled(motion.div)`
-  height: 0px;
-  background: #00162C;
-  position: fixed;
-  left: 0px;
-  right:0px;
-  top: 75px;
-  z-index: 6;
-  text-align: center;
-  overflow: hidden;
-  overflow-y: auto;
-`;
-
 const RotateStyled = styled(motion.svg)`
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  z-index: 7;
-  cursor: pointer;
-  color: White;
+	position: absolute;
+	right: 1rem;
+	top: 0rem;
+	z-index: 10;
+	cursor: pointer;
+	color: White;
+	width: 30px;
+	height: 30px;
 `;

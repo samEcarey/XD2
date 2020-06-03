@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const ContainerWorkspaceSC = styled.section`
-	@media (min-width: 1280px) {
+	width: 100%;
+	overflow-x: hidden;
+	@media (min-width: 768px) {
+		overflow: hidden;
 	}
 	/* background: green; */
 `;

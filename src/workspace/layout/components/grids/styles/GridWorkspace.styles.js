@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Breakpoints } from "app/common";
 
 export const GridWorkspaceSC = styled.section`
 	display: grid;
@@ -6,7 +7,10 @@ export const GridWorkspaceSC = styled.section`
 	grid-auto-rows: min-content auto;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-	//width: 100vw;
-	height: 100vh;
-	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	@media ${Breakpoints.sm} {
+		overflow: hidden;
+		height: 100vh;
+	}
 `;

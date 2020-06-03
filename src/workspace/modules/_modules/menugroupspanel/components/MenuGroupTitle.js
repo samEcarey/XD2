@@ -1,4 +1,5 @@
 import React from "react";
+import { MenuGroupTitleStyled } from "../styles";
 
 /*
  * This is template for MenuGroups
@@ -7,8 +8,8 @@ import React from "react";
 
 export function MenuGroupTitle({ menugroupbrand, menugroupagent }) {
 	return (
-		<div className="MenuGroupNav-title">
+		<MenuGroupTitleStyled className="MenuGroupNav-title">
 			<h2>{menugroupbrand}</h2>
-		</div>
+		</MenuGroupTitleStyled>
 	);
 }

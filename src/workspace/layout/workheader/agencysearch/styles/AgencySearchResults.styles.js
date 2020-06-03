@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PRIMARY_SHADE, PRIMARY_COLOR, WHITE_COLOR, DANGER_SHADE, GREY_500 } from "app/constants";
 
 export const AgencySearchResultsStyled = styled.div`
 	margin-top: 30px;
@@ -15,10 +16,10 @@ export const AgencySearchResultsStyled = styled.div`
 		li {
 			display: grid;
 			margin: 15px;
-			color: #FFFFFF;
-			background-color: #002040;
+			color: ${WHITE_COLOR};
+			background-color: ${PRIMARY_SHADE};
 			opacity: 0;
-			&.fire { background-color: RED; }
+			&.fire { background-color: ${DANGER_SHADE}; }
 			span {
 				display: block;
 				margin: 0px 0px 0px 0px;
@@ -29,7 +30,7 @@ export const AgencySearchResultsStyled = styled.div`
 				font-size: 14px;
 				&:hover {
 					cursor: pointer;
-					background-color: #012b59;
+					background-color: ${PRIMARY_COLOR};
 					box-shadow: inset 0px 4px 8px -3px rgba(17,17,17,.6)
 				}
 				svg {
@@ -37,7 +38,7 @@ export const AgencySearchResultsStyled = styled.div`
 					margin: 0px auto;
 					display: block;
 					margin-bottom: 5px;
-					fill: #FFFFFF;
+					fill: ${WHITE_COLOR};
 				}
 			}
 		}
@@ -54,17 +55,17 @@ export const AgencySearchResultsStyled = styled.div`
 			.radio-horizontal {
 				display: flex;
 				align-items: center;
-				margin: 0px 50px 10px 50px;
+				margin: 0 1rem;
 				label { text-transform: capitalize; margin-bottom: 0px; color: #FFF; cursor: pointer; }
 			}
 
 			input[type="radio"] {
-				margin: 0px 0px 0px 0px;
+				margin: 0;
 				padding: 0;
 				-webkit-appearance: none;
 				box-sizing: border-box;
 				outline: none;
-				color: #002040;
+				color: ${PRIMARY_SHADE};
 				text-transform: uppercase;
 				border-width: 1px;
 				border-radius: 2px;
@@ -88,7 +89,7 @@ export const AgencySearchResultsStyled = styled.div`
 				}
 				&:checked {
 					border-radius: 10px;
-					background-color: #002040;
+					background-color: ${PRIMARY_SHADE};
 				}
 			}
 		}
