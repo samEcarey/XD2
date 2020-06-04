@@ -31,6 +31,9 @@ export const WorkflowFormAreaStyled = styled.div`
 				min-width: 22%;
 				width: inherit;
 				margin-right: 4%;
+				&:nth-child(2n) {
+					margin-right: 4%;
+				}
 				&:nth-child(4n) {
 					margin-right: 0;
 				}

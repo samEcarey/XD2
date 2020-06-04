@@ -15,7 +15,7 @@ export const OverlayAgencySearch = (props) => {
 
 	const overlay = {
 		hidden: { opacity: 0, height: "0px" },
-		visible: { height: "100%", opacity: 1}
+		visible: { height: "calc(100vh - 8rem)", opacity: 1}
 	};
 
 	return (

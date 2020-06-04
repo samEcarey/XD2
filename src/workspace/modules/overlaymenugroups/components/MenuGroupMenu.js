@@ -4,7 +4,7 @@ import { IconAngleDoubleRight, IconAdd } from "../assets";
 import { MenuGroupMenuStyled } from "../styles";
 import { OverlayWorkflows } from "../../overlayworkflows";
 
-export function MenuGroupMenu({ one, two, three, four }) {
+export function MenuGroupMenu({ one, two, three, four, SetOverlayMenugroup }) {
 	const [overlayWorkflow, SetOverlayWorkflow] = useState(false)
 	return (
 		<>
@@ -27,7 +27,7 @@ export function MenuGroupMenu({ one, two, three, four }) {
 		</MenuGroupMenuStyled>
 
 		{/* Overlay Workflow include with state */}
-		<OverlayWorkflows overlayWorkflow={overlayWorkflow} SetOverlayWorkflow={SetOverlayWorkflow} />
+		<OverlayWorkflows overlayWorkflow={overlayWorkflow} SetOverlayWorkflow={SetOverlayWorkflow} SetOverlayMenugroup={SetOverlayMenugroup} />
 		</>
 	);
 }

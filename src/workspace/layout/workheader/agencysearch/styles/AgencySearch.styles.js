@@ -3,13 +3,13 @@ import { Breakpoints } from "app/common";
 import { WHITE_COLOR, PRIMARY_COLOR, PRIMARY_TINT, PRIMARY_SHADE, GREY_950 } from "app/constants"
 
 export const AgencySearchNavStyled = styled.nav`
-	display: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
 	@media ${Breakpoints.lg} {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
+		
 	}
 	&.Skeleton-Workheader-agencysearch {
 		.Form-group {
@@ -89,12 +89,15 @@ export const AgencySearchNavStyled = styled.nav`
 					right: 0;
 					bottom: 0;
 					color: ${PRIMARY_TINT};
-					font-size: 2rem;
+					font-size: 1.5rem;
 					font-weight: bold;
 					padding: 1rem;
 					display: inline-block;
 					transition: all .4s;
 					&.hide { transform: scale(0); opacity: 0; }
+					@media ${Breakpoints.lg} {
+						font-size: 2rem;
+					}
 				}
 				.input-content {
 					font-size: 1.5rem;

@@ -3,11 +3,14 @@ import { Breakpoints } from "app/common";
 import { PRIMARY_TINT, COLOR_WHITE, WHITE_COLOR, GREY_400, GREY_700, GREY_950 } from "app/constants";
 
 export const UserWelcomeStyled = styled.div`
-	display: flex;
+	display: none;
 	align-items: center;
 	border: 2px solid ${PRIMARY_TINT};
 	border-radius: 1rem;
-    padding: 0.7rem;
+	padding: 0.7rem;
+	@media ${Breakpoints.lg} {
+		display: flex;
+	}
 	.User-text {
 		color: ${GREY_700};
 		font-weight: bold;

@@ -22,13 +22,15 @@ export const UserActionsNavStyled = styled.nav`
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			cursor: pointer;
 			&.active, &:hover {
 				background: ${GREY_950};
-				svg { fill: ${SECONDARY_SHADE}; }
+				svg { fill: ${SECONDARY_SHADE}; color: ${SECONDARY_SHADE}; }
 			}
 			svg {
 				width: 4rem;
 				height: 4rem;
+				color: ${GREY_700};
 				fill: ${GREY_700};
 			}
 		}

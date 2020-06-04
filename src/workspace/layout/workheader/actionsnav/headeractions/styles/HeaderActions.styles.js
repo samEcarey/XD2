@@ -5,14 +5,13 @@ import { PRIMARY_SHADE, PRIMARY_TINT, WHITE_COLOR, SUCCESS_SHADE, DANGER_COLOR, 
 
 export const HeaderActionsStyled = styled.div`
 	display: none;
-	@media ${Breakpoints.xl} { 
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-items: flex-end;
-		margin-top: 2rem;
-		margin-top: 0rem;
-	}
+	//display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: flex-end;
+	margin-top: 2rem;
+	margin-top: 0rem;
+	@media ${Breakpoints.xl} { }
 	.button-group-action {
 		.button {
 			color: ${WHITE_COLOR};

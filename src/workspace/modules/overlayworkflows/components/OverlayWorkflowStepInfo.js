@@ -3,7 +3,7 @@ import { Flex } from "app/layout";
 import { IconChevronLeft, IconChevronRight } from "../assets";
 import { OverlayWorkflowStepInfoStyled } from "../styles";
 
-export function OverlayWorkflowStepInfo() {
+export function OverlayWorkflowStepInfo({ currentStep, SetCurrentStep }) {
 	return (
 		<OverlayWorkflowStepInfoStyled className="Overlay-workflow-step-info">
 			<div className="workflow-step-details">
@@ -12,8 +12,8 @@ export function OverlayWorkflowStepInfo() {
 			</div>
 			<div className="workflow-step-actions">
 				<div className="button-group-step">
-					<button className="button prev"><IconChevronLeft /> Prev</button>
-					<button className="button next">Next <IconChevronRight /></button>
+					<button className="button prev" onClick={()=>SetCurrentStep(currentStep - 1)} disabled={currentStep === 1 ? true : false}><IconChevronLeft /> Prev</button>
+					<button className="button next" onClick={()=>SetCurrentStep(currentStep + 1)} disabled={currentStep === 3 ? true : false}>Next <IconChevronRight /></button>
 				</div>
 			</div>
 		</OverlayWorkflowStepInfoStyled>

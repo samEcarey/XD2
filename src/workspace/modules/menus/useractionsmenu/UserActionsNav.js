@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { UserActionsNavStyled } from "./styles";
-import { IconAddCircle, IconAddSquare, IconLogOff } from "./assets";
+import { IconAddCircle, IconAddSquare, IconComfortable } from "./assets";
+import { OverlayTablefull } from "../../overlaytablefull";
 
 export const UserActionsNav = ({ children }) => {
+	const [overlayTablefull, SetOverlayTablefull] = useState(false)
 	return (
+		<>
 		<UserActionsNavStyled className="Workaside-useractionsnav">
 			{children}
 			<ul>
@@ -16,7 +19,14 @@ export const UserActionsNav = ({ children }) => {
 				<li>
 					<IconAddSquare />
 				</li>
+				<li onClick={()=>SetOverlayTablefull(true)}>
+					<IconComfortable />
+				</li>
 			</ul>
 		</UserActionsNavStyled>
+
+		{/* Overlay tableapp include with state */}
+		<OverlayTablefull overlayTablefull={overlayTablefull} SetOverlayTablefull={SetOverlayTablefull} />
+		</>
 	);
 };

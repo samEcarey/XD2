@@ -8,11 +8,11 @@ export const OverlayAgencySearchStyled = styled(motion.div)`
 	background: ${GREY_950};
 	position: fixed;
 	left: 0rem;
-	top: 0rem;
+	top: 8rem;
 	right: 0;
 	z-index: 9;
 	text-align: center;
 	overflow: hidden;
 	overflow-y: auto;
-	@media ${Breakpoints.lg} { left: 8rem; top: 8rem; }
+	@media ${Breakpoints.lg} { left: 0rem; top: 8rem; }
 `;

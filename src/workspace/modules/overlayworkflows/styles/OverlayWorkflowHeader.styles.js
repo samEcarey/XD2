@@ -28,8 +28,7 @@ export const OverlayWorkflowHeaderStyled = styled.div`
         align-items: center;
         .button-group-action {
             display: none;
-            @media ${Breakpoints.md} { display: block; }
-            display: flex;
+            @media ${Breakpoints.md} {  display: flex; }
             justify-content: space-between;               
            .button {
                color: ${WHITE_COLOR};

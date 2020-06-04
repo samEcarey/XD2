@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import { Container } from "workspace/layout";
+import React from "react";
 import { MenuGroupTitle, MenuGroupName, MenuGroupMenu } from "./components";
 import { OverlayMenugroupsStyled } from "./styles";
 import { IconClose} from "./assets";
@@ -10,7 +7,7 @@ export function OverlayMenugroups({overlayMenugroup, SetOverlayMenugroup}) {
 
 	const overlay = {
 		hidden: { opacity: 0, height: "0px" },
-		visible: { height: "100%", opacity: 1}
+		visible: { height: "calc(100vh - 8rem)", opacity: 1}
 	};
 
 	return (
@@ -36,6 +33,7 @@ export function OverlayMenugroups({overlayMenugroup, SetOverlayMenugroup}) {
 						<MenuGroupName menugroupfriendlyname="Extraduty Jobs" />
 					</div>
 					<MenuGroupMenu
+						SetOverlayMenugroup={SetOverlayMenugroup}
 						one="Create New Job"
 						two="Split Job"
 						three="Quote a Job"
@@ -47,6 +45,7 @@ export function OverlayMenugroups({overlayMenugroup, SetOverlayMenugroup}) {
 						<MenuGroupName menugroupfriendlyname="Extraduty Employers" />
 					</div>
 					<MenuGroupMenu
+						SetOverlayMenugroup={SetOverlayMenugroup}
 						one="Create a New Employer"
 						two="Edit an Employer"
 						three="Deactivate an Employer"

@@ -7,10 +7,7 @@ export const GridWorkspaceSC = styled.section`
 	grid-auto-rows: min-content auto;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-	height: 100%;
 	width: 100%;
-	@media ${Breakpoints.sm} {
-		overflow: hidden;
-		height: 100vh;
-	}
+	overflow: hidden;
+	height: 100vh;
 `;

@@ -7,10 +7,6 @@ import { Agencies } from "../constants/AgencyData";
 export const AgencySearchResults = (props) => {
 
 	const [agencyType, setAgencyType] = useState('all')
-	const inputEl = useRef(true)
-	const holderEl = useRef(null)
-	const caretEl = useRef(null)
-	const [agencySearchString, setAgencySearchString] = useState('')
 	const [loading, setLoading] = useState(false);
 
 	const { isAgencyOverlay, setIsAgencyOverlay} = props
@@ -19,29 +15,11 @@ export const AgencySearchResults = (props) => {
 	var agencytypeArray = Agencies.map(function(agency) { return agency.type })
 	agencytypeArray = Array.from(new Set(agencytypeArray))
 
-	const focusInput = (e) => {
-		inputEl.current.focus()
-		caretEl.current.classList.add("bling")
-		holderEl.current.classList.add("hide")
-	}
-
-	const blurInput = (e) => {
-		caretEl.current.classList.remove("bling")
-		if (agencySearchString === "") {
-			holderEl.current.classList.remove("hide")
-		}
-	}
-
-	// Search value change
-	const handleSearchChange = (e) => {
-		setAgencySearchString(e.target.value)		
-	}
 
 	// Set Agency Type Filter
 	const getAgencyType = (e) => {
 		var val = e.target.value
 		setAgencyType(val)
-		
 	}
 
 
@@ -52,12 +30,13 @@ export const AgencySearchResults = (props) => {
 	};
 
 	// Filter agencies using agency type & search string
-	let searchString;
+	let searchString 
 	if(props.agencySearchString) {
-		 searchString = props.agencySearchString.trim().toLowerCase()
+		searchString = props.agencySearchString.trim().toLowerCase();
 	} else {
-		 searchString = agencySearchString.trim().toLowerCase()
+		
 	}
+	
 	
 	const filterAgencies = Agencies.filter(function(i) {
 		if(agencyType === 'all') {
@@ -70,22 +49,11 @@ export const AgencySearchResults = (props) => {
 		//return null
 	})
 
-	console.log(filterAgencies)
+
 
 	return (
 		<AgencySearchResultsStyled className="Agency-search-results">
-			<form className="search-form">
-				<div className="form-group-search">
-					<div className="caret" tabIndex="1" onClick={focusInput} onFocus={focusInput}>
-						<div className="caret-content" >
-							<div ref={holderEl} className="caret-place-holder">Search for an Agency</div>
-							<span className="input-content">{agencySearchString}</span>
-							<span ref={caretEl} className="input-caret"></span>
-							<input ref={inputEl} onBlur={blurInput} onFocus={()=>setIsAgencyOverlay(true)} className="hidden-input" type="search" onChange={handleSearchChange} tabIndex="-1"  />
-						</div>
-					</div>
-				</div>
-			</form>
+		
 			<form className="agency-type-form">
 				<div className="form-group-radio">
 					<div className="radio-horizontal">

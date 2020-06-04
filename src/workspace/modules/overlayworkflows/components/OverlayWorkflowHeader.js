@@ -3,8 +3,12 @@ import { FaStar } from "react-icons/fa";
 import { IconClose } from "../assets";
 import { OverlayWorkflowHeaderStyled } from "../styles";
 
-export function OverlayWorkflowHeader({ SetOverlayWorkflow }) {
+export function OverlayWorkflowHeader({ SetOverlayWorkflow,SetOverlayMenugroup }) {
 	
+	const handleOverlayClose = () => {
+		SetOverlayWorkflow(false)	
+		SetOverlayMenugroup(false)
+	}
 	return (
 		<OverlayWorkflowHeaderStyled className="Overlay-workflow-header">
 			<div className="Workflow-header-brand">
@@ -15,10 +19,10 @@ export function OverlayWorkflowHeader({ SetOverlayWorkflow }) {
 			</div>
 			<div className="Workflow-header-actions">
 				<div className="button-group-action">
-					<button className="button cancel">Cancel</button>
+					<button className="button cancel" onClick={()=>SetOverlayWorkflow(false)}>Cancel</button>
 					<button className="button save">Save</button>
 				</div>
-				<span className="workflow-close" onClick={() => SetOverlayWorkflow(false)}>
+				<span className="workflow-close" onClick={handleOverlayClose}>
 					<IconClose />
 				</span>
 			</div>

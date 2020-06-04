@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { Breakpoints } from "app/common";
 import { PRIMARY_SHADE, GREY_950, WHITE_COLOR, PRIMARY_TINT } from "app/constants";
 
-export const OverlayMenugroupsStyled = styled(motion.nav)`
+export const OverlayMenugroupsStyled = styled(motion.div)`
 	margin: 0rem 0rem 0rem 0rem;
 	height: 0px;
 	background: ${GREY_950};
 	position: fixed;
-	left: 8rem;
-	top: 0rem;
+	left: 0rem;
+	top: 8rem;
 	right: 0;
 	z-index: 5;
 	overflow: hidden;

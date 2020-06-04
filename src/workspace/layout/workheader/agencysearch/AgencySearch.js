@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AgencySearchNavStyled } from "./styles";
 import { Flex } from "app/layout";
-import { HoverSearchIcon,OverlayAgencySearch } from "./components";
+import { HoverSearchIcon } from "./components";
+import { OverlayAgencySearch } from "workspace/modules/overlayagencysearch";
 
 export function AgencySearch() {
 	
@@ -58,7 +59,8 @@ export function AgencySearch() {
 					
 				</Flex.RowCenter>
 			</form>
-
+			
+			{/* Include overlay agenncy search from modules */}
 			<OverlayAgencySearch isAgencyOverlay={isAgencyOverlay} setIsAgencyOverlay={setIsAgencyOverlay} agencySearchString={agencySearchString} />
 		</AgencySearchNavStyled>
 	);

@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { OverlayWorkflowsStyled } from "./styles";
-import { IconClose} from "./assets";
 import { OverlayWorkflowHeader, OverlayWorkflowInfo, OverlayWorkflowStepInfo, OverlayWorkflowStepForm } from "./components";
 
-export function OverlayWorkflows({overlayWorkflow, SetOverlayWorkflow}) {
-
+export function OverlayWorkflows({overlayWorkflow, SetOverlayWorkflow, SetOverlayMenugroup}) {
+	const [currentStep, SetCurrentStep] = useState(1)
 	const overlay = {
-		hidden: { opacity: 0, height: "0px" },
-		visible: { height: "100%", opacity: 1}
+		hidden: { display: "none" },
+		visible: { display: "block" }
 	};
 
 	return (
@@ -19,10 +17,10 @@ export function OverlayWorkflows({overlayWorkflow, SetOverlayWorkflow}) {
 			animate={overlayWorkflow ? "visible" : "hidden"}
 		>
 			<div className="Overlay-workflows-inner">
-				<OverlayWorkflowHeader SetOverlayWorkflow={SetOverlayWorkflow} />
+				<OverlayWorkflowHeader SetOverlayWorkflow={SetOverlayWorkflow} SetOverlayMenugroup={SetOverlayMenugroup} />
 				<OverlayWorkflowInfo />
-				<OverlayWorkflowStepInfo />
-				<OverlayWorkflowStepForm />
+				<OverlayWorkflowStepInfo currentStep={currentStep} SetCurrentStep={SetCurrentStep} />
+				<OverlayWorkflowStepForm currentStep={currentStep} SetCurrentStep={SetCurrentStep} />
 			</div>
 		</OverlayWorkflowsStyled>
 	);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Normalize } from "../vendors";
-import { HtmlBodyStyles } from "./HtmlBody";
+import { HtmlBodyStyles } from "./htmlbody";
 import { AStyled, ButtonStyles } from "../actions";
 import { HRStyles, ImgStyled } from "../atoms";
 import {

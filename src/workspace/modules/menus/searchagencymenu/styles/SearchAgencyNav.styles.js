@@ -3,7 +3,7 @@ import { Breakpoints } from "app/common";
 import { PRIMARY_SHADE, SECONDARY_SHADE, GREY_700, GREY_950 } from "app/constants";
 
 export const SearchAgencyNavStyled = styled.nav`
-	display: block;
+	display: none;
 	@media ${Breakpoints.lg} { display: none; }
 	ul {
 		margin: 0rem 0rem 0rem 0rem;
