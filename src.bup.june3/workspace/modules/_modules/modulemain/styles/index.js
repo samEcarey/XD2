@@ -1,7 +1,0 @@
-export * from "./ModuleMain.styles"
-export * from "./ModuleLeft.styles"
-export * from "./ModuleInfo.styles"
-export * from "./ModuleStepNavigation.styles"
-export * from "./ModuleFormArea.styles"
-export * from "./ModuleFormNavigation.styles"
-export * from "./ModuleRight.styles"

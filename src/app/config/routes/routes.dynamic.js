@@ -26,7 +26,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         {routeComponents}
-        </div>
       </BrowserRouter>
     );
   }

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Breakpoints } from "app/common";
 import { WHITE_COLOR, PRIMARY_COLOR, PRIMARY_TINT, PRIMARY_SHADE, GREY_950 } from "app/constants"
+import { DANGER_SHADE } from "app/data";
 
 export const AgencySearchNavStyled = styled.nav`
 	display: flex;
@@ -50,6 +51,15 @@ export const AgencySearchNavStyled = styled.nav`
 			background: ${GREY_950};
 			border-radius: 5rem;
 			width: 100%;
+			&.agency-fire {
+				background-color: ${DANGER_SHADE};
+				input {
+					color: ${PRIMARY_TINT};
+				}
+			}
+			&.agency-police {
+				background-color: ${PRIMARY_SHADE};
+			}
 			svg {
 				margin-left: 2rem;
 			}
@@ -63,6 +73,10 @@ export const AgencySearchNavStyled = styled.nav`
 				&::placeholder {
 					color: ${PRIMARY_TINT};
 				}
+			}
+			.close-agency {
+				cursor: pointer;
+				padding: 1rem 1rem 0 0;
 			}
 		}
 		/* Flashing Cursor */
@@ -88,15 +102,23 @@ export const AgencySearchNavStyled = styled.nav`
 					left: 0;
 					right: 0;
 					bottom: 0;
-					color: ${PRIMARY_TINT};
+					color: ${WHITE_COLOR};
 					font-size: 1.5rem;
 					font-weight: bold;
 					padding: 1rem;
 					display: inline-block;
 					transition: all .4s;
+					display: flex;
+					align-items: center;
 					&.hide { transform: scale(0); opacity: 0; }
 					@media ${Breakpoints.lg} {
 						font-size: 2rem;
+					}
+					svg {
+						width: 2rem;
+						height: 2rem;
+						margin: 0 1rem 0 0;
+						fill: ${WHITE_COLOR};
 					}
 				}
 				.input-content {

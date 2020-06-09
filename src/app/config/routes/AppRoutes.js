@@ -10,9 +10,7 @@ export const ScreenRoutes = () => {
 			<Switch>
 				<Route exact path="/" component={Website} />
 				<Route exact path="/framer" component={Framer} />
-				<Route exact path="/workspace">
-					<Workspace />
-				</Route>
+				<Route exact path="/workspace" component={Workspace} />
 				<Route path="/workspace/auth" component={WorkspaceAuth} />
 			</Switch>
 		</>
