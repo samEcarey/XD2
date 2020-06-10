@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { SearchAgencyNavStyled } from "./styles";
 import { IconSearchLoading } from "./assets";
-import { OverlayAgencySearch } from "../../overlayagencysearch";
+import { IconEdsHat } from "app/assets"
+import { AgencySearch } from "../../agencysearch";
 
 export const SearchAgencyNav = ({ children }) => {
 	const [isAgencyOverlay, setIsAgencyOverlay] = useState(false)
@@ -10,6 +11,9 @@ export const SearchAgencyNav = ({ children }) => {
 		<SearchAgencyNavStyled className="Workaside-searchagencynav">
 			{children}
 			<ul>
+				<li className="brand-icon">
+					<IconEdsHat />
+				</li>
 				<li onClick={()=>setIsAgencyOverlay(true)}>
 					<IconSearchLoading />
 				</li>
@@ -17,7 +21,7 @@ export const SearchAgencyNav = ({ children }) => {
 		</SearchAgencyNavStyled>
 
 		{/* Overlay agency search include with state */}
-		<OverlayAgencySearch isAgencyOverlay={isAgencyOverlay} setIsAgencyOverlay={setIsAgencyOverlay} />
+		<AgencySearch isAgencyOverlay={isAgencyOverlay} setIsAgencyOverlay={setIsAgencyOverlay} />
 		</>
 	);
 };

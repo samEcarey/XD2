@@ -1,47 +1,77 @@
 import styled from "styled-components";
-import { PRIMARY_SHADE } from "app/constants";
+import { PRIMARY_SHADE, PRIMARY_TINT, GREY_950, GREY_400 } from "app/constants";
 
 export const StyledFGLoginCheckbox = styled.div`
-	/*** SHAME: Hack - flexbox not working right */
 	display: grid;
-	grid-template-columns: 4rem auto;
+	grid-template-columns: auto auto;
 	grid-template-rows: auto;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
 	align-items: center;
-	padding-bottom: 3rem;
+	padding-bottom: 0rem;
 	@media (min-width: 768px) {
 		padding-bottom: 1rem;
 	}
-	/* background: red; */
-	.checkbox-left , .checkbox-right {
-		height: 2.4rem;
+
+	.checkbox-left {
+		padding: 1rem 1rem 0;
 	}
-	.checkbox-right {
-		padding-top: .5rem;
-	}
+	
 	label {
 		display: block !important;
 		width: 100% !important;
 		text-transform: capitalize !important;
-		/* background-color: red; */
-
 		position: relative;
-  	cursor: pointer;
+		padding-left: 3.5rem;
+		margin-bottom: 2rem;
+		cursor: pointer;
+		font-size: 1.2rem;
+		text-transform: inherit;
+		vertical-align: middle;
+		line-height: 2.5rem;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 	}
 	input[type="checkbox"] {
-		/* background-color: ${PRIMARY_SHADE}; */
-		display: inline !important;
-		margin: 0rem 1.5rem 0rem 1.5rem;
-		padding: 0rem 0rem 0rem 0rem;
-		height: initial;
-		width: initial;
-		margin-bottom: 0;
-		display: none;
+		position: absolute;
+		opacity: 0;
 		cursor: pointer;
-		&:checked {
-			box-shadow: 0 0 0 3px hotpink;
+		height: 0;
+		width: 0;
+		&:checked ~ .checkmark {
+			background-color: ${PRIMARY_TINT};
+			&:after {
+				display: block;
+			}
 		}
 	}
-	/* background-color: green; */
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: ${GREY_950};
+		border: 1px solid ${PRIMARY_TINT};
+		@media (min-width: 768px) {
+			background-color: ${GREY_400};
+			border: 1px solid ${GREY_400};
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+			left: 6px;
+			top: 2px;
+			width: 10px;
+			height: 15px;
+			border: solid white;
+			border-width: 0 3px 3px 0;
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+	}			
 `;

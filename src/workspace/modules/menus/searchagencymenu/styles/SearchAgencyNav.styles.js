@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Breakpoints } from "app/common";
-import { PRIMARY_SHADE, SECONDARY_SHADE, GREY_700, GREY_950 } from "app/constants";
+import { PRIMARY_SHADE, SECONDARY_SHADE, GREY_700, GREY_950, WHITE_COLOR } from "app/constants";
 
 export const SearchAgencyNavStyled = styled.nav`
-	display: none;
-	@media ${Breakpoints.lg} { display: none; }
+	display: block;
+	@media ${Breakpoints.md} { display: none; }
 	ul {
 		margin: 0rem 0rem 0rem 0rem;
 		padding: 0rem 0rem 0rem 0rem;
@@ -12,6 +12,8 @@ export const SearchAgencyNavStyled = styled.nav`
 		width: 100%;
 		text-align: center;
 		border-bottom: 1px solid ${PRIMARY_SHADE};
+		border-top: 1px solid ${PRIMARY_SHADE};
+		@media ${Breakpoints.sm} { border-top: 0px; }
 		li {
 			margin: 1rem;
 			background: ${PRIMARY_SHADE};
@@ -29,6 +31,7 @@ export const SearchAgencyNavStyled = styled.nav`
 				width: 4rem;
 				height: 4rem;
 				color: ${GREY_700};
+				fill: ${WHITE_COLOR};
 			}
 		}
 	}

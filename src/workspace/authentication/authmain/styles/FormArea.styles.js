@@ -4,6 +4,7 @@ import {
 	PRIMARY_TINT,
 	SECONDARY_COLOR,
 	SECONDARY_SHADE,
+	TERTIARY_COLOR,
 	WARNING_COLOR,
 	WARNING_SHADE,
 	WARNING_TINT,
@@ -14,7 +15,10 @@ import {
 	COLOR_WHITE,
 	BORDER_RADIUS,
 	FORM_BORDER_RADIUS_PILL,
-	FORM_PADDING
+	FORM_PADDING,
+	GREY_400,
+	GREY_950,
+	WHITE_COLOR
 } from "app/constants";
 // import { BORDER_RADIUS } from "app/constants";
 import { PRIMARY_COLOR } from "app/data";
@@ -60,13 +64,27 @@ export const StyledFormArea = styled.div`
 				} */
 				text-transform: uppercase;
 				font-size: 1rem;
+				color: ${SECONDARY_COLOR};
 			}
 			input {
 				margin-bottom: 0.5rem;
-				background-color: ${PRIMARY_SHADE};
+				font-weight: bold;
+				background-color: ${GREY_950};
+				@media (min-width: 768px) {
+					background-color: ${GREY_400};
+					border-color: ${GREY_400};
+					&::placeholder {
+						color: ${TERTIARY_COLOR};
+						font-size: 1em;
+					}
+				}
 				&::placeholder {
 					color: ${PRIMARY_TINT};
 					font-size: 1em;
+				}
+				&:focus {
+					background-color: ${PRIMARY_TINT};
+					color: ${WHITE_COLOR};
 				}
 			}
 			input[type="text"],
@@ -76,7 +94,7 @@ export const StyledFormArea = styled.div`
 				@media (min-width: 768px) {
 					${helperButtonSizeMD}
 				}
-				border-radius: ${FORM_BORDER_RADIUS_PILL};
+				border-radius: 0px;
 				color: ${COLOR_WHITE};
 			}
 			small {
@@ -101,11 +119,12 @@ export const StyledFormArea = styled.div`
 					margin-bottom: ${marginBottomTablet};
 				}
 				width: 100%;
-				border-radius: ${FORM_BORDER_RADIUS_PILL};
+				border-radius: .4rem;
 				${helperButtonSizeLG}
 				@media (min-width: 768px) {
 					${helperButtonSizeMD}
 				}
+				color: ${WHITE_COLOR};
 				&:hover {
 					span {
 						color: ${SECONDARY_SHADE};
@@ -138,11 +157,9 @@ export const StyledFormArea = styled.div`
 						margin: 0rem 1.5rem 0rem 0rem;
 					}
 				}
-
-				/* background: yellow; */
 			}
 		}
-		/* background: purple; */
+		
 	}
-	/* background: red; */
+	
 `;

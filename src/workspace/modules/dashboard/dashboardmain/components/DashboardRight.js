@@ -1,6 +1,6 @@
 import React from "react";
 import { DashboardRightStyled } from "../styles";
-import { FaQuestionCircle } from "react-icons/fa";
+import { IconRefresh } from "../assets";
 
 export const DashboardRight = ({ currentStep, SetCurrentStep }) => {
 	return (
@@ -8,7 +8,7 @@ export const DashboardRight = ({ currentStep, SetCurrentStep }) => {
 			<section className="Workflow-menugroup">
 				<div className="Workflow-menugrouptitle">
 					<h4>
-						<FaQuestionCircle />
+						<IconRefresh />
 						<span>Workflow History</span>
 					</h4>
 				</div>

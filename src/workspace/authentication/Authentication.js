@@ -3,8 +3,6 @@ import { StyledScreen, StyledWrapper, StyledGrid } from "./_includes";
 
 import { AuthHeader } from "./authheader";
 import { AuthMain } from "./authmain";
-// import { AuthAside } from "./authaside";
-// import { AuthFooter } from "./authfooter";
 
 export const Authentication = () => {
 	return (
@@ -13,8 +11,6 @@ export const Authentication = () => {
 				<StyledGrid className="Auth-grid">
 					<AuthHeader />
 					<AuthMain />
-					{/* <AuthAside /> */}
-					{/* <AuthFooter /> */}
 				</StyledGrid>
 			</StyledWrapper>
 		</StyledScreen>

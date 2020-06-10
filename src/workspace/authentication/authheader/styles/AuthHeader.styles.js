@@ -17,9 +17,10 @@ export const StyledAuthHeader = styled.header`
 	background-color: ${PRIMARY_COLOR};
 	border-top-right-radius: ${BORDER_RADIUS};
 	border-top-left-radius: ${BORDER_RADIUS};
-	@media (min-width: 640px) {
+	@media (min-width: 768px) {
 		border-top-right-radius: 0rem;
-		border-bottom-left-radius: ${BORDER_RADIUS};
+		border-top-left-radius: 3rem;
+		border-bottom-left-radius: 3rem;
 	}
 	h1 {
 	}

@@ -1,8 +1,5 @@
 import React from "react";
 import {
-	IconEdsHat,
-	IconEdsText,
-	IconEdsTextBottom,
 	IconEdsLogo
 } from "app/assets";
 

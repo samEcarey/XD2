@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
 	PRIMARY_COLOR,
-	COLOR_WHITE,
+	WHITE_COLOR,
 	BOX_SHADOW,
 	SHADOW_10,
 	FILTER_DROPSHADOW_SVG_CHUNK,
@@ -19,17 +19,13 @@ export const StyledTitleArea = styled.figure`
 		margin: 0rem auto 0rem auto;
 		min-width: 24rem;
 		max-width: 24rem;
+		fill: ${WHITE_COLOR};
+		filter: ${FILTER_DROPSHADOW_SVG_CHUNK};
 		@media (min-width: 768px) {
 			min-width: 20rem;
 			max-width: 20rem;
-		}
-		fill: ${COLOR_WHITE};
-		${FILTER_DROPSHADOW_SVG_CHUNK}
-		@media (min-width: 768px) {
 			fill: ${PRIMARY_COLOR};
-			${FILTER_DROPSHADOW_SVG_CHUNK_ZERO}
+			filter: ${FILTER_DROPSHADOW_SVG_CHUNK_ZERO};
 		}
-		/* background: green; */
 	}
-	/* background: red; */
 `;

@@ -17,8 +17,8 @@ export const StyledAuthMain = styled.main`
 		padding: 0rem 3rem 0rem 3rem;
 		color: ${PRIMARY_SHADE};
 		background: ${COLOR_WHITE};
-		border-top-right-radius: ${BORDER_RADIUS};
-		border-bottom-right-radius: ${BORDER_RADIUS};
+		border-top-right-radius: 3rem;
+		border-bottom-right-radius: 3rem;
 		border-bottom-left-radius: 0rem;
 	}
 `;

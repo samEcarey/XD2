@@ -22,6 +22,7 @@ export const StyledLinksArea = styled.nav`
 			}
 			a {
 				font-size: 1.4rem;
+				font-weight: bold;
 				@media (min-width: 768px) {
 					font-size: 1rem;
 				}

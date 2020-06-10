@@ -11,17 +11,16 @@ export const AuthMain = () => {
 
 	return (
 		<StyledAuthMain className="Authentication-main">
-			{/* <StyledAuthMainGrid className="AuthMain-grid"> */}
+			
 			<TitleArea />
 			<FormArea>
 				<AuthRoutes />
-				{/* <Redirect to="workspace/auth/login" /> */}
 			</FormArea>
 			<LinksArea />
 			<MessageArea>
 				{fakeAuth.isAuthenticated ? <AuthSignOut /> : <AuthNotLoggedInMsg />}
 			</MessageArea>
-			{/* </StyledAuthMainGrid> */}
+		
 		</StyledAuthMain>
 	);
 };

@@ -54,10 +54,10 @@ export function Login() {
 				</FieldGroup>
 				<FieldGroupLoginCheckbox classes="fieldgroup-checkbox">
 					<div className="checkbox-left">
-						<Input type="checkbox" name="remember" />
-					</div>
-					<div className="checkbox-right">
-						<Label htmlFor="remember">Remember me</Label>
+						<Label>Remember me
+							<input type="checkbox" name="remember" className="form-input-checkbox" />
+							<span class="checkmark"></span>
+						</Label>
 					</div>
 				</FieldGroupLoginCheckbox>
 				<FieldGroup>

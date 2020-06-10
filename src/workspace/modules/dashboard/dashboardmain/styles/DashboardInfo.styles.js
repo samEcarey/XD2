@@ -17,6 +17,7 @@ export const DashboardInfoStyled = styled.div`
 				margin: 0px;
 				font-size: 2.2rem;
 			}
+			span {padding: 0.5rem 0; display: block; }
 			p { font-size: 1.5rem; }
 		}
 	}

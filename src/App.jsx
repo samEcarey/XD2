@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import { GlobalBaseStyles } from "app/common";
-import { ScreenRoutes } from "app/config";
+import { AppRoutes } from "app/config";
 import { AppGlobalStateProvider } from "app/data";
 
 import { ThemeProvider } from "styled-components";
@@ -18,7 +18,7 @@ function App() {
 				<AppGlobalStateProvider>
 					<div className="App">
 						<GlobalBaseStyles />
-						<ScreenRoutes />
+						<AppRoutes />
 					</div>
 				</AppGlobalStateProvider>
 			</ThemeProvider>
