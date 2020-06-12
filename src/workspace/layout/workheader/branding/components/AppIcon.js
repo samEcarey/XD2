@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { useAppGlobalState } from "app/data";
 import { AppIconStyled } from "../styles";
-import { SkeletonCircle, SkeletonCircleLoader } from "app/common";
-import { IconEdsHat } from "app/assets"
+import { SkeletonCircleLoader } from "app/common";
+import { IconEdsHat, IconEdsHatOutlined } from "app/assets";
 
 export function AppIcon() {
 	const [loading, setLoading] = useState(false);
@@ -19,14 +20,18 @@ export function AppIcon() {
 
 	const [state, dispatch] = useAppGlobalState();
 	const handleBrand = () => {
-		dispatch({appValue: ''});
-		dispatch({moduleValue: ''});
-	}
+		dispatch({ appValue: "" });
+		dispatch({ moduleValue: "" });
+	};
 
 	return (
 		<AppIconStyled className="Workaside-appicon" onClick={handleBrand}>
 			{loading && <SkeletonCircleLoader />}
-			{!loading && <IconEdsHat />}
+			{!loading && (
+				<NavLink to="/workspace">
+					<IconEdsHatOutlined />
+				</NavLink>
+			)}
 		</AppIconStyled>
 	);
 }

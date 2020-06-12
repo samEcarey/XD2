@@ -107,7 +107,7 @@ export const AgencySearchNavStyled = styled.nav`
 					right: 0;
 					bottom: 0;
 					color: ${WHITE_COLOR};
-					font-size: 1.5rem;
+					font-size: 1.4rem;
 					font-weight: bold;
 					padding: 1rem;
 					display: inline-block;

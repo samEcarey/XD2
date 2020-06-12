@@ -8,9 +8,9 @@ export const AppRoutes = () => {
 	return (
 		<>
 			<Switch>
-				<Route exact path="/" component={Website} />
-				<Route exact path="/workspace" component={Workspace} />
 				<Route path="/workspace/auth" component={WorkspaceAuth} />
+				<Route path="/workspace" component={Workspace} />
+				<Route path="/" component={Website} />
 			</Switch>
 		</>
 	);

@@ -5,9 +5,11 @@ export function useColumnReorderFunc(state, dispatch){
     const { id } = e.target;
     const idx = state.tableData.table.columns.findIndex(col => col.name === id);
     if(idx >= 0) {
+      e.dataTransfer.effectAllowed = 'move';
       e.dataTransfer.setData('colIdx', idx);
-      e.target.style.cursor = 'move'; 
     }
+    e.target.style.background = "gray";
+    e.target.querySelector('span').style.display = "inline-block";
   }
 
   function handleDragOver(e) { 
@@ -16,8 +18,11 @@ export function useColumnReorderFunc(state, dispatch){
 
   function handleDragEnter(e) {
     const { id } = e.target;
-    //e.target.style.cursor = 'move'; 
-    dispatch({ dragOver: id})
+    dispatch({ dragOver: id});
+  }
+
+  function handleDragLeave(e) {
+   
   }
 
   function handleOnDrop(e) {
@@ -35,9 +40,15 @@ export function useColumnReorderFunc(state, dispatch){
       state.tableData.table.columns = tempCols
       dispatch({ tableData: state.tableData})
     }
+    
     dispatch({ dragOver: ''})
   }
 
-  return { handleDragStart, handleDragOver, handleDragEnter, handleOnDrop }
+  function handleDragEnd(e) {
+    e.target.style.background = "rgba(0,43,87,1.0)";
+    e.target.querySelector('span').style.display = "none";
+  }
+
+  return { handleDragStart, handleDragOver, handleDragLeave, handleDragEnter, handleOnDrop, handleDragEnd }
   
 }

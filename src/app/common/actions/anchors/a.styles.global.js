@@ -9,7 +9,7 @@ export const AStyled = createGlobalStyle`
 			-o-transition: color 0.2s ease-in-out;
 			-ms-transition: color 0.2s ease-in-out;
 		text-decoration: none;
-		a:active  { }
+		&:active  { }
 		&:visited { color: ${PRIMARY_COLOR}; }
 		&:hover,
 		&:focus,

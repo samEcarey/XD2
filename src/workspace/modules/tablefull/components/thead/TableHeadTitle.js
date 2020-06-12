@@ -27,7 +27,7 @@ export const TableHeadTitle = () => {
   const displayColumns = state.tableData.table.columns.filter(column => {
     return column.hidden === false
   })
-
+ console.log(state.dragOver)
   return (
         <TR>
           {state.tableData.table.isCollapseRows ?
@@ -43,7 +43,7 @@ export const TableHeadTitle = () => {
           }
           {displayColumns.map((column,index) => {
             return (
-              <TH key={index} className={`${column.isCollapse ? state.expandedColumns.includes(column.name) ? 'expanded' : 'collapsed' : ''} ${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`}>
+              <TH key={index} dragOver={column.name === state.dragOver} className={`${column.isCollapse ? state.expandedColumns.includes(column.name) ? 'expanded' : 'collapsed' : ''} ${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`}>
 
                 {state.tableData.table.isFreezeColumn ?
                   <input type="checkbox" name="name1" onChange={() => handleColumnCheckBoxFields(column, index)} checked={column.checked} />

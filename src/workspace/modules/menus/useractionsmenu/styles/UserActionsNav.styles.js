@@ -18,7 +18,7 @@ export const UserActionsNavStyled = styled.nav`
 		text-align: center;
 		/* border-top: 1px solid ${PRIMARY_SHADE}; */
 		border-bottom: 1px solid ${PRIMARY_SHADE};
-		li {
+		li a {
 			margin: 1rem auto;
 			background: ${PRIMARY_SHADE};
 			width: 4rem;

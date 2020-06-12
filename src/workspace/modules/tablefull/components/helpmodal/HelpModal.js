@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import ReactModal from 'react-modal-resizable-draggable';
 import { HelpTabs } from './helptabs'
@@ -15,6 +15,9 @@ export const HelpModal = () => {
   const LockModal = () => {
     setIsLock(!isLock)
   }
+  useEffect(() => {
+    
+  });
   return (
     <HelpModalStyle>
         <button className="open_help_modal" onClick={openModal}>
@@ -23,7 +26,6 @@ export const HelpModal = () => {
       <ReactModal 
           minWidth={400} 
           minHeight={400} 
-          top={20} 
           disableMove={isLock} 
           initWidth={500} 
           initHeight={400} 
@@ -81,21 +83,21 @@ const HelpModalStyle = styled.div`
     z-index:9;
   }
   .flexible-modal {
-    position: absolute;
+    position: fixed;
     z-index: 9;
     border: 1px solid #ccc;
     background: white;
   }
-  .flexible-modal-mask {
-    position: fixed;
-    height: 100%;
-    background: rgba(55, 55, 55, 0.6);
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index: 1;
-  }
+  // .flexible-modal-mask {
+  //   position: fixed;
+  //   height: 100%;
+  //   background: rgba(55, 55, 55, 0.6);
+  //   top:0;
+  //   left:0;
+  //   right:0;
+  //   bottom:0;
+  //   z-index: 1;
+  // }
   .flexible-modal-resizer {
     position:absolute;
     right:0;

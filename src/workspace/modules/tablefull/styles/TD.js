@@ -9,4 +9,7 @@ export const TD = (props) => {
 	)
 }
 
-const StyledTD = styled.td``
+const StyledTD = styled.td`
+	border-left: ${props => props.dragOver ? "5px solid red" : ""} !important;
+	border-right: ${props => props.dragOver ? "5px solid red" : ""} !important;
+`

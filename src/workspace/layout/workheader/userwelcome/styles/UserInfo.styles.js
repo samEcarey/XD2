@@ -1,98 +1,111 @@
 import styled from "styled-components";
 import { Breakpoints } from "app/common";
-import { PRIMARY_TINT, COLOR_WHITE, WHITE_COLOR, GREY_400, GREY_700, GREY_950 } from "app/constants";
+import {
+	PRIMARY_TINT,
+	COLOR_WHITE,
+	WHITE_COLOR,
+	GREY_400,
+	GREY_700,
+	GREY_950,
+	BORDER_RADIUS
+} from "app/constants";
 
 export const UserInfoStyled = styled.div`
 	display: flex;
 	align-items: center;
-	border: 2px solid ${PRIMARY_TINT};
-	border-radius: 1rem;
-	padding: 0.7rem;
 	margin: 1rem 0;
-	.User-text {
-		color: ${GREY_700};
-		font-weight: bold;
-		text-align: left;
-		font-size: 1.8rem;
-		line-height: 1.8rem;
-		span {
+	padding: 0.5rem;
+	border: 1px solid ${PRIMARY_TINT};
+	border-radius: ${BORDER_RADIUS};
+	figure.User-profile {
+		display: none;
+		@media ${Breakpoints.sm} {
 			display: block;
 		}
-		a {
-			color: ${GREY_700};	
+		margin: 0rem 0.4rem 0rem 0rem;
+		padding: 0rem;
+		width: 3.5rem;
+		height: 3.5rem;
+		background-color: ${PRIMARY_TINT};
+		border-radius: ${BORDER_RADIUS};
+	}
+	.User-text {
+		color: ${GREY_700};
+		font-weight: normal;
+		text-align: left;
+		line-height: 1.8rem;
+		small {
+			font-size: 1.2rem;
+		}
+		span {
+			display: block;
+			font-size: 1.6rem;
+			a {
+				color: ${GREY_700};
+			}
 		}
 	}
 	.User-more {
 		position: relative;
 		display: inline-block;
 		cursor: pointer;
+		user-select: none;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
-		user-select: none;
 		& > span > svg {
-			width: 30px;
-			height: 30px;
-			color: ${PRIMARY_TINT};
 			margin: 1rem 0rem 0rem 1rem;
+			width: 3rem;
+			height: 3rem;
+			color: ${PRIMARY_TINT};
 			cursor: pointer;
 		}
 	}
-	figure.User-profile {
-		margin: 0;
-		padding: 0;
-		width: 4.5rem;
-		height: 4.5rem;
-		background-color: ${PRIMARY_TINT};
-		border-radius: 1rem;
-		margin-right: 1rem;
-		display:none;
-		@media ${Breakpoints.sm} {
-			display: block;
-		}
-	}
 	.User-more-popup {
-		visibility: hidden;
-		width: 300px;
-		background-color: ${PRIMARY_TINT};
-		color: ${WHITE_COLOR};
-		border: 1px solid ${GREY_950};
-		border-radius: 1rem;
-		padding: 1rem 2rem;
+		z-index: 10;
 		position: absolute;
-		z-index: 5;
+		visibility: hidden;
+		padding: 1rem 2rem;
+		width: 30rem;
 		top: 60px;
 		right: -25px;
+		color: ${WHITE_COLOR};
+		background-color: ${PRIMARY_TINT};
+		border: 0.1rem solid ${GREY_950};
+		border-radius: ${BORDER_RADIUS};
 		&::after {
 			content: "";
 			position: absolute;
 			top: -40px;
+			right: 30px;
+			border-color: transparent transparent ${PRIMARY_TINT} transparent;
 			border-width: 2rem;
 			border-style: solid;
-			border-color: transparent transparent ${PRIMARY_TINT} transparent;
-			right: 30px;
 		}
 		&.show {
 			visibility: visible;
-			-webkit-animation: fadeIn 1s;
 			animation: fadeIn 1s;
+			-webkit-animation: fadeIn 1s;
 		}
 		h2 {
-			font-size: 2.5rem;
 			margin-bottom: 0.7rem;
+			font-size: 2.5rem;
 		}
 		.close-icon {
-			position: absolute;
 			z-index: 6;
-			right: 1rem;
+			position: absolute;
 			top: 1rem;
+			right: 1rem;
 		}
 		.User-logout {
 			margin-top: 1rem;
 			text-align: right;
 			a {
-				font-size: 1.5rem;
-				color: ${COLOR_WHITE};
+				font-size: 1.4rem;
+				color: ${WHITE_COLOR};
+				&:visited {
+					color: ${WHITE_COLOR};
+				}
 				padding: 1rem;
 				text-transform: uppercase;
 			}
@@ -107,16 +120,24 @@ export const UserInfoStyled = styled.div`
 				margin-left: 2rem;
 			}
 		}
-		
+
 		/* Add animation (fade in the popup) */
 		@-webkit-keyframes fadeIn {
-		from {opacity: 0;} 
-		to {opacity: 1;}
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
 		}
 
 		@keyframes fadeIn {
-		from {opacity: 0;}
-		to {opacity:1 ;}
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
 		}
 	}
 `;

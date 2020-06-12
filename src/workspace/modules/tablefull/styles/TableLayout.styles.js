@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { Breakpoints } from "app/common";
-import { PRIMARY_SHADE, GREY_950, WHITE_COLOR, PRIMARY_TINT } from "app/constants";
+
 
 export const TableLayoutStyled = styled.div`
+  button {
+    color: #FFF;
+  }
   caption {
     margin-bottom: 15px;
     button {
@@ -21,6 +22,7 @@ export const TableLayoutStyled = styled.div`
     td, th {
       padding: 1.2rem 1.5rem;
       border: 0.1rem solid #e1e1e1;
+
       &.alignright {
         text-align: right;
       }
@@ -30,6 +32,9 @@ export const TableLayoutStyled = styled.div`
     }
     .dragelement{
       cursor: move;
+      span {
+        display: none;
+      }
     }
    
     td span.editicon {

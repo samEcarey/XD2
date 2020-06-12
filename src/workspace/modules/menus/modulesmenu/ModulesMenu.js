@@ -61,9 +61,11 @@ export function ModulesMenu() {
 				) : (
 					<>
 						<li>
-							<a href="">
+							<Link
+								to="/workspace"
+							>
 								<IconDashboard />
-							</a>
+							</Link>
 						</li>
 						<li
 							className={

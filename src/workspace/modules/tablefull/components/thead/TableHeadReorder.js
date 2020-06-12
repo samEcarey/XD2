@@ -9,7 +9,7 @@ export const TableHeadReorder = () => {
   const [state, dispatch] = useTableState();
 
   // Handle Column reorder
-  const { handleDragStart, handleDragOver, handleDragEnter, handleOnDrop } = useColumnReorderFunc(state,dispatch)
+  const { handleDragStart, handleDragOver, handleDragLeave, handleDragEnter, handleOnDrop, handleDragEnd } = useColumnReorderFunc(state,dispatch)
 
 
   // Display columns 
@@ -35,11 +35,15 @@ export const TableHeadReorder = () => {
                 id={column.name}
                 draggable
                 onDragStart={handleDragStart}
-                onDragOver={handleDragOver}
-                onDrop={handleOnDrop}
                 onDragEnter={handleDragEnter}
-                dragover={column.name === state.dragOver ? true : 'undefined'}  >
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleOnDrop}
+                onDragEnd={handleDragEnd}
+                dragOver={column.name === state.dragOver}
+                >
                   <FaArrowsAlt />
+                  <span>{column.name}</span>
               </TH>
             )
           })}

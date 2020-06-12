@@ -45,16 +45,16 @@ export const TableHeadFilter = () => {
                 state.columnGearFilter[column.name] 
                 ?
                   state.columnGearFilter[column.name] === 'search' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}><input type="search" name={column.name} defaultValue='' onChange={(e) => handleSearch(e, column.name)} /></TH>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}><input type="search" name={column.name} defaultValue='' onChange={(e) => handleSearch(e, column.name)} /></TH>
                   : state.columnGearFilter[column.name] === 'dropdown' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
                       <select onChange={(e) => handleDropdownOptionChange(e, column.name)}>
                         <option value="">Choose Option</option>
                         {handleDropdownOptionList(column.name)}
                       </select>
                     </TH>
                   : state.columnGearFilter[column.name] === 'dropdownRange' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
                       <select onChange={(e) => handleDropdownRange(e, column.name)}>
                         <option value="">Choose Option</option>
                         {column.rangeOptions.map((option) => (
@@ -63,28 +63,28 @@ export const TableHeadFilter = () => {
                       </select>
                     </TH>
                   : state.columnGearFilter[column.name] === 'sort' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
                       <span onClick={()=>handleColumnSort(column.name)}>Sort {handleColumnDirection(column.name)}</span>
                     </TH>
                   : state.columnGearFilter[column.name] === 'rangeSlider' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
                       <Range defaultValue={[column.defaultSliderValues[0], column.defaultSliderValues[1]]} min={column.defaultSliderValues[0]} max={column.defaultSliderValues[1]} onChange={(e)=>handleRangeSlider(e,column.name,index)} /> <br/>
                       {column.rangeSliderValues ?
                       <strong>Range: {column.rangeSliderValues[0]}-{column.rangeSliderValues[1]}</strong>
                       : null}
                     </TH>
-                  : <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}></TH>
+                  : <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}></TH>
                 : column.defaultFilter === 'search' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}><input type="search" name={column.name} onChange={(e) => handleSearch(e, column.name)} /></TH>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}><input type="search" name={column.name} onChange={(e) => handleSearch(e, column.name)} /></TH>
                   : column.defaultFilter === 'dropdown' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
                       <select onChange={(e) => handleDropdownOptionChange(e, column.name)}>
                         <option value="">Choose Option</option>
                         {handleDropdownOptionList(column.name)}
                       </select>
                     </TH>
                   : column.defaultFilter === 'dropdownRange' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
                       <select onChange={(e) => handleDropdownRange(e, column.name)}>
                         <option value="">Choose Option</option>
                         {column.rangeOptions.map((option) => (
@@ -93,17 +93,17 @@ export const TableHeadFilter = () => {
                       </select>
                     </TH>
                   : column.defaultFilter === 'sort' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
                       <span onClick={()=>handleColumnSort(column.name)}>Sort {handleColumnDirection(column.name)}</span>
                     </TH>
                   : column.defaultFilter === 'rangeSlider' ?
-                    <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
+                    <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}>
                       <Range defaultValue={[column.defaultSliderValues[0], column.defaultSliderValues[1]]} min={column.defaultSliderValues[0]} max={column.defaultSliderValues[1]} onChange={(e)=>handleRangeSlider(e,column.name,index)} /> <br/>
                       {column.rangeSliderValues ?
                       <strong>Range: {column.rangeSliderValues[0]}-{column.rangeSliderValues[1]}</strong>
                       : null}
                     </TH>
-                  : <TH className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}></TH>
+                  : <TH dragOver={column.name === state.dragOver} className={`${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index}></TH>
               )
             })}
           </TR>
