@@ -31,7 +31,7 @@ export const TableHeadReorder = () => {
           {displayColumns.map((column,index) => {
             return (
               <TH key={index} 
-                className="dragelement"
+                className={`${column.name === state.dragColumn ? 'dragelement dragcolumn' : 'dragelement'}`}
                 id={column.name}
                 draggable
                 onDragStart={handleDragStart}

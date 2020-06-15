@@ -1,98 +1,98 @@
-import React from 'react'
-import styled from 'styled-components'
-import { IconFaCog } from '../../styles' 
-import { ModalForm } from './ModalForm'
-import { handleModalDragFunc } from '../../hooks'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import ReactModal from 'react-modal-resizable-draggable';
+import { IconFaCog } from '../../styles' ;
+import { ModalForm } from './ModalForm';
 
-export class TableModalSwitcher extends React.Component {
-	state = { show: false }
-	showModal = () => { 
-		handleModalDragFunc('global')
-		this.setState({ show: true }) 
-	}
-  	hideModal = () => { 
-		this.setState({ show: false }) 
-	}
-  
-  componentDidMount() {
-   // handleModalDragFunc()
-  }
 
-	render() {
-		return (
-			<main>
-				<Modal show={this.state.show} handleClose={this.hideModal} >
-					<h1 id="modalheader_global">Advance Sort</h1>
-					<ModalForm {...this.props}/>
-				</Modal>
-				<StyledButton type='button' onClick={this.showModal}>
-					<IconFaCog/>
-				</StyledButton>
-			</main>
-		)
-	}
-}
+export const TableModalSwitcher = (props) => {
+	const [show, SetShow] = useState(false);
 
-const Modal = ({ handleClose, show, children }) => {
-	const showHideClassName = show ? 'modal display-block' : 'modal display-none'
+	const showModal = () => { 
+		SetShow(true);
+	}
+  	const hideModal = () => { 
+		SetShow(false);
+	}
 	return (
-		<StyleWrapper>
-		<div className={showHideClassName}>
-			<section id="modalpopup_global" className="modalpopup">
-				{children}
-				<div className="close">
-					<button onClick={handleClose}>Close</button>
+		<ModalStyled>
+			{show &&
+			<ReactModal 
+				initHeight={450}
+				disableResize={true} 
+				onRequestClose={hideModal} 
+				isOpen={show}
+			>
+				<h1>Advance Sort</h1>
+				<div className="modalbody">
+					<ModalForm {...props}/>	
+					<button className="close" onClick={hideModal}>
+						Close modal
+					</button>
 				</div>
-			</section>
-		</div>
-		</StyleWrapper>
+
+				
+			</ReactModal>
+			}
+			<button className="open-modal" type='button' onClick={showModal}>
+				<IconFaCog/>
+			</button>
+		</ModalStyled>
 	)
 }
 
-const StyleWrapper = styled.div`
-	div.display-block { display: block; }
-	div.display-none { display: none; }
-	.modal {
-		z-index: 9999;
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		background: rgba(0, 0, 0, 0.6);
-		section {
-			position:fixed;
-			padding: 1.5rem;
-			width: 60%;
-      max-height: 80%;
-      overflow-y: scroll;
-			top: 50%;
-			left: 50%;
-			text-align: left;
-			color: #232323;
-			background: #f1f1f1;
-			border-radius: 10px;
-			transform: translate(-50%,-50%);
-			h1 { margin: 0rem; cursor: move; }
-			p { }
-		}
+const ModalStyled = styled.main`
+	button {
+		color: WHITE;
 	}
-	div.close { 
-		text-align: center;
-		button { 
-			margin: 0rem auto; 
-		}
-	}
-`
-
-const StyledButton = styled.button`
-	span {
-		padding-top: .6rem;
-		svg {
-			fill: white;
-			&:hover {
-				fill: #2fa1cc;
+	button.open-modal {
+		span {
+			padding-top: .6rem;
+			svg {
+				fill: white;
+				&:hover {
+					fill: #2fa1cc;
+				}
 			}
 		}
+	}
+	.modalbody {
+		height: 450px;
+		overflow-y:scroll;
+		background: WHITE;
+	}
+	.flexible-modal {
+		position: fixed;
+		z-index: 9;
+		border: 1px solid #ccc;
+		background: white;
+		color: #002b57;
+	}
+	.flexible-modal-mask {
+		position: fixed;
+		height: 100%;
+		background: rgba(55, 55, 55, 0.6);
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		z-index: 1;
+	}
+	.flexible-modal-resizer {
+		position:absolute;
+		right:0;
+		bottom:0;
+		cursor:se-resize;
+		margin:5px;
+		border-bottom: solid 2px #333;
+		border-right: solid 2px #333;
+	}
+	.flexible-modal-drag-area{
+		background: rgba(22, 22, 333, 0.2);
+		height: 50px;
+		position:absolute;
+		right:0;
+		top:0;
+		cursor:move;
 	}
 `

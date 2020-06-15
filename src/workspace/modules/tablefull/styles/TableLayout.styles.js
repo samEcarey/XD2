@@ -36,6 +36,10 @@ export const TableLayoutStyled = styled.div`
         display: none;
       }
     }
+    .dragcolumn {
+      background-color: gray;
+      //opacity: 0.3;
+    }
    
     td span.editicon {
       float: right;

@@ -72,7 +72,7 @@ export const ModalForm = (props) => {
 const StyledForm = styled.form`
 	margin-bottom: 3.0rem;
 	background: white;
-	border-radius: 1.0rem;
+  border-radius: 1.0rem;
 	div {
 		label { }
 		input[type="radio"] { 

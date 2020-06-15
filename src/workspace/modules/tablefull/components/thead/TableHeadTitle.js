@@ -43,7 +43,7 @@ export const TableHeadTitle = () => {
           }
           {displayColumns.map((column,index) => {
             return (
-              <TH key={index} dragOver={column.name === state.dragOver} className={`${column.isCollapse ? state.expandedColumns.includes(column.name) ? 'expanded' : 'collapsed' : ''} ${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`}>
+              <TH key={index} dragOver={column.name === state.dragOver} className={`${column.isCollapse ? state.expandedColumns.includes(column.name) ? 'expanded' : 'collapsed' : ''} ${column.checked ? `freeze freeze_${index}` : ''} ${column.name === state.dragColumn ? `dragcolumn` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`}>
 
                 {state.tableData.table.isFreezeColumn ?
                   <input type="checkbox" name="name1" onChange={() => handleColumnCheckBoxFields(column, index)} checked={column.checked} />

@@ -1,99 +1,103 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import ReactModal from 'react-modal-resizable-draggable';
 import { IconFaCog } from '../../styles'
 import { ModalForm } from './ModalForm'
-import { handleModalDragFunc } from '../../hooks'
 
-export class ColumnModalSwitcher extends React.Component {
-	state = { show: false }
-  showModal = () => { 
-	handleModalDragFunc(this.props.column.name)
-	this.setState({ show: true }) 
-	this.props.handleColumnFilter(this.props.column.name)
-  }
-  hideModal = () => { 
-	this.setState({ show: false })
-	this.props.handleColumnFilter()
-  }
+
+export const ColumnModalSwitcher = (props) => {
   
-  componentDidMount() {
-    //handleModalDragFunc(this.props.column)
-  }
+	const [show, SetShow] = useState(false);
 
-	render() {
-		return (
-			<main>
-				<Modal show={this.state.show} handleClose={this.hideModal} column= {this.props.column.name} >
-					<h1 id={`modalheader_`+this.props.column.name}>{this.props.column.name} Column Filter</h1>
-					<ModalForm {...this.props}/>
-				</Modal>
-				<StyledButton type='button' onClick={this.showModal}>
-					<IconFaCog/>
-				</StyledButton>
-			</main>
-		)
+	const showModal = () => { 
+		SetShow(true);
+		props.handleColumnFilter(props.column.name)
 	}
-}
-
-const Modal = ({ handleClose, show, children, column }) => {
-	const showHideClassName = show ? 'modal display-block' : 'modal display-none'
+  	const hideModal = () => { 
+		SetShow(false);
+		props.handleColumnFilter()
+	}
+	
 	return (
-		<StyleWrapper>
-		<div className={showHideClassName}>
-			<section id={`modalpopup_`+column} className="modalpopup">
-				{children}
-				<div className="close">
-					<button onClick={handleClose}>Close</button>
+		<ModalStyled>
+			{show &&
+			<ReactModal 
+				onRequestClose={hideModal} 
+				isOpen={show}
+				top={100} 
+				minWidth={450} 
+          		minHeight={320} 
+			>
+				<h1>{props.column.name} Column Filter</h1>
+				<div className="modalbody">
+					<ModalForm {...props}/>	
+					<button className="close" onClick={hideModal}>Close</button>
 				</div>
-			</section>
-		</div>
-		</StyleWrapper>
+			</ReactModal>
+			}
+			<button className="open-column-modal" type='button' onClick={showModal}>
+				<IconFaCog/>
+			</button>
+		</ModalStyled>
 	)
+	
 }
 
-const StyleWrapper = styled.div`
-	div.display-block { display: block; }
-	div.display-none { display: none; }
-	.modal {
-		z-index: 9999;
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		background: rgba(0, 0, 0, 0.6);
-		section {
-			position:fixed;
-			padding: 1.5rem;
-			width: 60%;
-			height: auto;
-			top: 50%;
-			left: 50%;
-			text-align: left;
-			color: #232323;
-			background: #f1f1f1;
-			border-radius: 10px;
-			transform: translate(-50%,-50%);
-			h1 { margin: 0rem; cursor: move; }
-			p { }
-		}
-	}
-	div.close { 
-		text-align: center;
-		button { 
-			margin: 0rem auto; 
-		}
-	}
-`
 
-const StyledButton = styled.button`
-	span {
-		padding-top: .6rem;
-		svg {
-			fill: white;
-			&:hover {
-				fill: #2fa1cc;
+
+const ModalStyled = styled.main`
+	button {
+		color: WHITE;
+	}
+	button.open-column-modal {
+		span {
+			padding-top: .6rem;
+			svg {
+				fill: white;
+				&:hover {
+					fill: #2fa1cc;
+				}
 			}
 		}
+	}
+	h1 {
+		padding: 0 1rem;
+	}
+	.modalbody {
+		padding: 1rem;
+	}
+	.flexible-modal {
+		position: fixed;
+		z-index: 9;
+		border: 1px solid #ccc;
+		background: white;
+		color: #002b57;
+	}
+	.flexible-modal-mask {
+		position: fixed;
+		height: 100%;
+		background: rgba(55, 55, 55, 0.6);
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		z-index: 1;
+	}
+	.flexible-modal-resizer {
+		position:absolute;
+		right:0;
+		bottom:0;
+		cursor:se-resize;
+		margin:5px;
+		border-bottom: solid 2px #333;
+		border-right: solid 2px #333;
+	}
+	.flexible-modal-drag-area{
+		background: rgba(22, 22, 333, 0.2);
+		height: 50px;
+		position:absolute;
+		right:0;
+		top:0;
+		cursor:move;
 	}
 `

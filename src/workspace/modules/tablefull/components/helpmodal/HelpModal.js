@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import ReactModal from 'react-modal-resizable-draggable';
-import { HelpTabs } from './helptabs'
+import { handleCustomDragFunc } from '../../hooks';
+import { HelpTabs } from './helptabs';
 
 export const HelpModal = () => {
   const [helpIsOpen, setHelpIsOpen] = useState(false)
@@ -15,15 +16,15 @@ export const HelpModal = () => {
   const LockModal = () => {
     setIsLock(!isLock)
   }
-  useEffect(() => {
-    
-  });
+
   return (
     <HelpModalStyle>
         <button className="open_help_modal" onClick={openModal}>
             Help modal
         </button>
-      <ReactModal 
+      {helpIsOpen &&
+        <ReactModal 
+          top={150}
           minWidth={400} 
           minHeight={400} 
           disableMove={isLock} 
@@ -34,11 +35,13 @@ export const HelpModal = () => {
           disableHorizontalResize={false}
           disableVerticalMove={false}
           disableHorizontalMove={false}
-          onFocus={() => console.log("Modal is clicked")}
+          onFocus={(e) => handleCustomDragFunc(e, isLock)}
           className={"my-modal-custom-class"}
+          id={"my-modal-popup"}
           onRequestClose={closeModal} 
+          bounds="window"
           isOpen={helpIsOpen}>
-              <h3>Help Modal</h3>
+              <h3 className="drag-area">Help Modal</h3>
               <div className="helpbody">
                   <p>This is Help Documments</p>
                   <HelpTabs>
@@ -53,13 +56,14 @@ export const HelpModal = () => {
                     </div>
                   </HelpTabs>
               </div>
-              <button className="lock_help_modal" onClick={LockModal}>
+              {/* <button className="lock_help_modal" onClick={LockModal}>
                   {isLock ? "unlock" : "lock"}
-              </button>
+              </button> */}
               <button className="close_help_modal" onClick={closeModal}>
                   Close modal
               </button>
           </ReactModal>
+      }
     </HelpModalStyle>
   );
 };
@@ -82,22 +86,27 @@ const HelpModalStyle = styled.div`
     right: 15px;
     z-index:9;
   }
+  .drag-area{
+    background: rgba(22, 22, 333, 0.2);
+    height: 50px;
+    cursor:move;
+  }
   .flexible-modal {
     position: fixed;
     z-index: 9;
     border: 1px solid #ccc;
     background: white;
   }
-  // .flexible-modal-mask {
-  //   position: fixed;
-  //   height: 100%;
-  //   background: rgba(55, 55, 55, 0.6);
-  //   top:0;
-  //   left:0;
-  //   right:0;
-  //   bottom:0;
-  //   z-index: 1;
-  // }
+  .flexible-modal-mask {
+    position: fixed;
+    height: 100%;
+    background: rgba(55, 55, 55, 0.6);
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 1;
+  }
   .flexible-modal-resizer {
     position:absolute;
     right:0;
@@ -114,5 +123,9 @@ const HelpModalStyle = styled.div`
     right:0;
     top:0;
     cursor:move;
+    display: none;
+  }
+  .flexible-modal-drag-area-left, .flexible-modal-drag-area-bottom, .flexible-modal-drag-area-right {
+    display: none;
   }
 `

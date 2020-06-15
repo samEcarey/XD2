@@ -10,6 +10,7 @@ const defaultTablefullState = {
   recordPerPage: InitialTableData.table.recordPerPage,
   columnSort: { column: '', direction: '' },
   dragOver: '',
+  dragColumn: '',
   rowHeaderCheckbox: false,
   rowCheckboxFields: InitialTableData.table.rows.map((d,i) => { return { checked: false, data:d }}),
   rowRadioFields: '',

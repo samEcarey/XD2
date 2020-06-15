@@ -4,9 +4,9 @@ import { Fieldset, FormGroup, Label } from '../../styles'
 
 export const ModalForm = (props) => {
 	return (
-		<StyledForm onSubmit={props.handleResetColumn}>
+	<StyledForm onSubmit={props.handleResetColumn}>
       <label>Filter by</label>
-      <FormGroup>
+      <FormGroup className="form-group">
         <input 
           type="radio"
           name={props.column.name}
@@ -48,10 +48,10 @@ export const ModalForm = (props) => {
         /><label>Range Slider</label></>
 		: null }
 	  </FormGroup> 
-      <FormGroup layout="savecontext">
+      <FormGroup className="form-group" layout="savecontext">
         <button name={props.column.name} onClick={(e) => props.handleResetColumn(e)}>Reset</button>
-			</FormGroup>
-		</StyledForm>
+	  </FormGroup>
+	</StyledForm>
 	)
 }
 
@@ -59,8 +59,9 @@ const StyledForm = styled.form`
 	margin-bottom: 3.0rem;
 	background: white;
 	border-radius: 1.0rem;
-	div {
-		label { }
+	.form-group {
+		padding: 1.5rem 0;
+		label { margin-right: 1rem; }
 		input[type="radio"] { 
 			margin-right: 1rem; 
 			margin-bottom: .6rem;

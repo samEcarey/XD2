@@ -59,7 +59,7 @@ export const TableBody = () => {
           }
           {displayColumns.map((column,index) => {
             return (
-              <TD className={`${numericSet.indexOf(column.dataType) > -1 ? 'alignright' : ''} ${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index} onClick={()=>disableEditTableCell()} dragOver={column.name === state.dragOver}>
+              <TD className={`${column.name === state.dragColumn ? `dragcolumn` : ''} ${numericSet.indexOf(column.dataType) > -1 ? 'alignright' : ''} ${column.checked ? `freeze freeze_${index}` : ''} ${state.selectedGearColumn === column.name ? 'current_filter' : ''}`} key={index} onClick={()=>disableEditTableCell()} dragOver={column.name === state.dragOver}>
                 {state.editCell === column.name+'_'+row.key ?
                     <input type='text' name={column.name} id={row.key} defaultValue={row[column.name]} onClick={(e) => { e.stopPropagation()}} onChange={(evt)=>handleEditTableCell(evt)} />
                 :

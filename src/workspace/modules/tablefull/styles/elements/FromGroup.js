@@ -1,10 +1,10 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-export const FormGroup = ({ children }) => {
+export const FormGroup = (props) => {
 	return (
-		<StyledFormGroup>
-			{children}
+		<StyledFormGroup {...props}>
+			{props.children}
 		</StyledFormGroup>
 	)
 }

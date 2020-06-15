@@ -8,7 +8,7 @@ export function useColumnReorderFunc(state, dispatch){
       e.dataTransfer.effectAllowed = 'move';
       e.dataTransfer.setData('colIdx', idx);
     }
-    e.target.style.background = "gray";
+    dispatch({ dragColumn: id});
     e.target.querySelector('span').style.display = "inline-block";
   }
 
@@ -45,7 +45,7 @@ export function useColumnReorderFunc(state, dispatch){
   }
 
   function handleDragEnd(e) {
-    e.target.style.background = "rgba(0,43,87,1.0)";
+    dispatch({ dragColumn: ''});
     e.target.querySelector('span').style.display = "none";
   }
 
