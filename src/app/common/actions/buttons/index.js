@@ -1,2 +1,2 @@
-export * from "./button.styles.global";
+export * from "./Button.styles.global";
 export * from "./Button";

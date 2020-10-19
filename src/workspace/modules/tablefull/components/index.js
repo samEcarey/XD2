@@ -1,7 +1,0 @@
-export * from './columnmodalswitcher'
-export * from './tablemodalswitcher'
-export * from './dropdownswitcher'
-export * from './tcaption'
-export * from './thead'
-export * from './tbody'
-export * from './tfoot'

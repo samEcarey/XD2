@@ -1,30 +1,45 @@
-import React from "react";
+import React, {createContext, useContext} from "react";
 
 const appGlobalState = {
+	apps:null,
 	isFullscreen: false,
 	fullscreenRef: null,
 	appValue: '',
 	moduleValue: '',
+	moduleDescription:'',
+	moduleMenus:[],
+	currentAgencyID:"",
+	currentJobList:"",
+	moduleMenuGroups:[],
+	moduleMenuGroupWorkflows:[],
+	changedJobs:{}
 };
 
-const globalStateContext = React.createContext(appGlobalState);
-const dispatchStateContext = React.createContext(undefined);
+
+
+export const ViewportContext = createContext();
+const globalStateContext = createContext(appGlobalState);
+const dispatchStateContext = createContext(undefined);
 
 export const AppGlobalStateProvider = ({ children }) => {
+	
 	const [state, dispatch] = React.useReducer(
 		(state, newValue) => ({ ...state, ...newValue }),
 		appGlobalState
 	);
+
+	
 	return (
 		<globalStateContext.Provider value={state}>
 			<dispatchStateContext.Provider value={dispatch}>
 				{children}
 			</dispatchStateContext.Provider>
+			
 		</globalStateContext.Provider>
 	);
 };
 
 export const useAppGlobalState = () => [
-	React.useContext(globalStateContext),
-	React.useContext(dispatchStateContext)
+useContext(globalStateContext),
+	useContext(dispatchStateContext)
 ];

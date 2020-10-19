@@ -1,41 +1,40 @@
 import React from "react";
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route, useLocation, Redirect } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Dashboard } from "workspace/modules";
-import { ModuleMenugroups } from "workspace/modules/routemodulemenugroups";
-import { Workflows } from "workspace/modules/routeworkflows";
-import { Tablefull } from "workspace/modules/routetablefull";
-
+import { Dashboard } from "Dashboard";
+import { ModuleMenugroups } from "Module-old/routemodulemenugroups";
+import { Workflows } from "Module-old/routeworkflows";
+import { Tablefull } from "Module-old/routetablefull";
+import { PrivateRoute } from "./PrivateRoute";
 export const WorkspaceRoutes = () => {
 	const location = useLocation();
 	return (
-		
-			<Switch location={location} key={location.pathname}>
-				<Route
-					path="/workspace/extraduty/accounting/tableapp-demo"
-					component={Tablefull}
-					exact={true}
-					strict={true}
-				/>
-				<Route
-					path="/workspace/extraduty/accounting/:workflowSlug"
-					component={Workflows}
-					exact={true}
-					strict={true}
-				/>
-				<Route
-					path="/workspace/extraduty/accounting"
-					component={ModuleMenugroups}
-					exact={true}
-					strict={true}
-				/>
-				<Route
-					path="/workspace"
-					component={Dashboard}
-					exact={true}
-					strict={true}
-				/>
+		<Switch>
+			<Route
+				path="/workspace/tablefull"
+				component={Tablefull}
+				exact={true}
+				strict={true}
+			/>
+			<PrivateRoute
+				path="/workspace/workflows"
+				component={Workflows}
+				exact={true}
+				strict={true}
+			/>
+			<PrivateRoute
+				path="/workspace/menu"
+				component={ModuleMenugroups}
+				exact={true}
+				strict={true}
+			/>
+			<Route
+				path="/workspace"
+				component={Dashboard}
+				exact={true}
+				strict={true}
+			/>
+			<Route render={() => <Redirect to={{ pathname: "/workspace" }} />} />
 		</Switch>
-		
 	);
 };

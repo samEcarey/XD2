@@ -1,17 +1,21 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-
+import { Switch, Redirect, Route } from "react-router-dom";
+import { PublicRoute } from "./PublicRoute";
+import { PrivateRoute } from "./PrivateRoute";
+import { useAuth } from "app/data";
 import { Website } from "website";
-import { Workspace, Authentication as WorkspaceAuth } from "workspace";
+import { Auth } from "Auth";
+import { Workspace } from "Workspace";
+import { UserContextProvider } from "app/data";
 
 export const AppRoutes = () => {
-	return (
-		<>
-			<Switch>
-				<Route path="/workspace/auth" component={WorkspaceAuth} />
-				<Route path="/workspace" component={Workspace} />
-				<Route path="/" component={Website} />
-			</Switch>
-		</>
+	const auth = useAuth();
+	
+	return auth.authState ? (
+		<UserContextProvider>
+			<Workspace />
+		</UserContextProvider>
+	) : (
+		<Auth />
 	);
 };

@@ -2,7 +2,7 @@ import React from "react";
 
 export const IconEdsLogo = () => {
 	return (
-		<svg id="logo-eds-liquid" viewBox="0 0 911.71 278.06">
+		<svg id="logo-eds-liquid" viewBox="0 0 911.71 278.06" style={{fill:"white"}}>
 			<path
 				class="cls-1"
 				d="M182.93,89.7a159.67,159.67,0,0,1,41.15-10.92,164.34,164.34,0,0,1,41.26,0A159.75,159.75,0,0,1,306.5,89.7V80.32c-1.37-.53-2.78-1-4.22-1.54a172.64,172.64,0,0,0-115.13,0c-1.44.51-2.85,1-4.22,1.54Z"
