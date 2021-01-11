@@ -21,7 +21,7 @@ export const UserActionsNav = ({ children }) => {
 	};
 	return (
 		<>
-			<UserActionsNavStyled className="Workaside-useractionsnav">
+			{/*<UserActionsNavStyled className="Workaside-useractionsnav">
 				{children}
 				<ul>
 					<li>
@@ -48,11 +48,10 @@ export const UserActionsNav = ({ children }) => {
 				</ul>
 			</UserActionsNavStyled>
 
-			{/* Overlay tableapp include with state */}
 			<Tablefull
 				overlayTablefull={overlayTablefull}
 				SetOverlayTablefull={SetOverlayTablefull}
-			/>
+			/>*/}
 		</>
 	);
 };

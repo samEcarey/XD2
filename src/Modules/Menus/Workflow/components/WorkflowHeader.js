@@ -1,44 +1,51 @@
-import React, { useState } from "react";
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { IconClose } from "../assets";
 import { WorkflowHeaderStyled } from "../styles";
 import { useAppGlobalState, useAuth } from "app/data";
-import {SAVEREVIEWJOBS} from 'app/data'
+import { SAVEREVIEWJOBS } from "app/data";
 
 export function WorkflowHeader({ SetOverlayWorkflow, SetOverlayMenugroup }) {
 	const [state, dispatch] = useAppGlobalState();
 	const auth = useAuth();
 
+	const [ready, setReady] = useState(false);
+
 	const handleOverlayClose = () => {
 		SetOverlayWorkflow(false);
 		SetOverlayMenugroup(false);
 	};
+	
 
+	useEffect(() => {
+		//console.log(state.changedJobs)
+		if (!Array.isArray(state.changedJobs.jobs) || !state.changedJobs.jobs.length) {
+			setReady(false)
+		} else {
+			setReady(true)
+
+		}
+	}, [state.changedJobs.jobs]);
+
+	
 	async function saveJobUpdates() {
-		console.log(state.changedJobs)
-
+	//	console.log(state.changedJobs)
 		const results = await axios
-			.put(
-				SAVEREVIEWJOBS,state.changedJobs,
-				{
-					headers: {
-						Authorization: `Bearer ${auth.authState}`,
-						"Content-Type": "application/json"
-					}
+			.put(SAVEREVIEWJOBS, state.changedJobs, {
+				headers: {
+					Authorization: `Bearer ${auth.authState}`,
+					"Content-Type": "application/json"
 				}
-			)
+			})
 			.then(response => {
-			
-				console.log(response);
-				dispatch({changedJobs:null})
+				//console.log(response);
+				dispatch({ changedJobs: {jobs:null} });
 				return response.data.payload.jobs;
 			})
 			.catch(error => {
-				console.log(error);
+				//console.log(error);
 				return error;
 			});
-
-			
 	}
 	return (
 		<WorkflowHeaderStyled className="Workflow-header">
@@ -53,16 +60,16 @@ export function WorkflowHeader({ SetOverlayWorkflow, SetOverlayMenugroup }) {
 					<button
 						className="button cancel"
 						onClick={() => SetOverlayWorkflow(false)}
-						
 					>
 						Cancel
 					</button>
-					<button
-						onClick={() => {
-							saveJobUpdates();
-						}}
-						className="button save"
-					>
+					<button onClick={()=>{
+						if(ready){
+							saveJobUpdates()
+						}
+					}} 
+					disabled={!ready}
+					className="button save">
 						Save
 					</button>
 				</div>

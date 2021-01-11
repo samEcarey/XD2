@@ -13,7 +13,7 @@ export function ModuleMenu() {
 	const [overlayMenugroup, SetOverlayMenugroup] = useState(false);
 	const [applications, setApplications] = useState([])
 	const [state, dispatch] = useAppGlobalState();
-	const [moduleVisible, setModuleVisible] = useState(false);
+	const [moduleVisible, setModuleVisible] = useState(true);
 	const handleModule = (a, m) => {
 		SetOverlayMenugroup(true);
 		dispatch({ appValue: a.friendlyname });

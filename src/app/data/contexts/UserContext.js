@@ -5,8 +5,8 @@ import React, {
 	useEffect,
 	callback
 } from "react";
-import axios from 'axios'
-import {GETUSERCONTEXT, useAuth} from 'app/data'
+import axios from "axios";
+import { GETUSERCONTEXT, useAuth } from "app/data";
 import { cookies } from "../cookie";
 export const UserContext = createContext();
 
@@ -21,11 +21,11 @@ export const useUser = () => {
 };
 
 function useGetUser() {
-const auth = useAuth();
-const [userState,setUserState] = useState()
+	const auth = useAuth();
+	const [userState, setUserState] = useState();
 
 	async function getUserContext() {
-		console.log("oke")
+		console.log("oke");
 		const url = GETUSERCONTEXT;
 		var config = {
 			method: "get",
@@ -38,17 +38,16 @@ const [userState,setUserState] = useState()
 		await axios(config)
 			.then(response => {
 				setUserState(response.data.payload);
-				console.log(response.data.payload)
+				console.log(response.data.payload);
 
 				return response.data.payload;
 			})
 			.catch(error => {
 				setUserState();
-				console.log(error)
+				console.log(error);
 				return error;
 			});
-
 	}
 
-	return {getUserContext,userState};
+	return { getUserContext, userState };
 }

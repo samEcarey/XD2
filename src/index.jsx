@@ -8,14 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {cookies} from 'app/data/cookie'
 
 ReactDOM.render(
-	<React.StrictMode>
 		
 		<AppContextProvider>
 			<Router>
 				<App />
 			</Router>
-		</AppContextProvider>
-	</React.StrictMode>,
+		</AppContextProvider>,
 	document.getElementById("root")
 );
 

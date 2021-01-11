@@ -20,11 +20,14 @@ export const DashboardCardsStyled = styled.div`
 			flex: 0 1 49%;
 		}
 		.Card-figure {
-			figure {
+			div
+			 {
+				vertical-align: middle;
+				text-align: center;
 				width:45px;
 				height: 45px;
 				border-radius: 100%;
-				background-color: ${PRIMARY_TINT};
+				
 				margin: 0 1rem 1rem 0;
 			}
 		}

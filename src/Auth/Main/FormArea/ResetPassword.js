@@ -14,7 +14,7 @@ export function ResetPassword(e) {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [validPasswordMessage, setValidPasswordMessage] = useState("");
 	const [reqs, setReqs] = useState()
-	const [buttonState, setButtonState] = useState(true)
+	const [buttonState, setButtonState] = useState(false)
 
 
 	useEffect(() => {
@@ -40,6 +40,7 @@ export function ResetPassword(e) {
 		const remainingRequirements = [];
 		const remainingErrors = []
 		if (password.length < reqs.minlength) {
+			setButtonState(true)
 			console.log(!password.localeCompare(confirmPassword))
 			remainingRequirements.push(
 				<div style={{ color: "maroon" }}>
@@ -47,20 +48,27 @@ export function ResetPassword(e) {
 				</div>
 			);
 		} else {
+			setButtonState(false)
+
 			remainingRequirements.push(
 				<div style={{ color: "skyblue" }}>
-					<FaCheck /> <b>Your password is long enough</b>
+					<FaCheck /> <b>Your password is long en
+						ough</b>
 				</div>
 			);
 		}
 	
 		if (password.localeCompare(confirmPassword) ||  password==="") {
+			setButtonState(true)
+
 			remainingRequirements.push(
 				<div style={{ color: "maroon" }}>
 					<FaTimes /> <b>Password and confirmation must match</b>
 				</div>
 			);
 		} else{
+			setButtonState(false)
+
 			remainingRequirements.push(
 				<div style={{ color: "skyblue" }}>
 					<FaCheck /> <b>Password and confirmation match</b>

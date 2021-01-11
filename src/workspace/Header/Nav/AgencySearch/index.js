@@ -59,7 +59,7 @@ export function HeaderNavAgencySearch() {
 
 					<div className="caret" tabIndex="1" onClick={focusInput} onFocus={focusInput}>
 						<div className="caret-content" >
-							<div ref={holderEl} className="caret-place-holder">
+							<div ref={holderEl} className="caret-place-holder" onSubmit="return false">
 								{agencyValue ?
 								<>
 									{(() => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext, useContext } from "react";
 import { WorkflowsStyled } from "./styles";
 import {
 	WorkflowHeader,
@@ -9,7 +9,76 @@ import {
 
 import { ReviewManagerMain } from "./types";
 import { useAppGlobalState } from "app/data";
+const TableData = {
+	table: {
+		fixedHeader: false,
+		showFooter: true,
+		deleteRow: false,
+		insertRow: false,
+		isSelection: "", // rows // cells
+		selectRow: "", // checkbox //radio
+		editableCell: false,
+		recordPerPage: 8,
+		isUserGearTableSetting: true,
+		isCollapseRows: false,
+		isContextMenu: false,
+		isFreezeColumn: false,
+		columns: [
+		],
+		rows: [
+			
+		]
+	}
 
+};
+const defaultTablefullState = {
+	tableData: TableData,
+				displayColumns: TableData.table.columns.filter(column => {return column.hidden === false}),
+				currentPage: 1,
+				recordPerPage: TableData.table.recordPerPage,
+				columnSort: { column: '', direction: '' },
+				dragOver: '',
+				dragColumn: '',
+				rowHeaderCheckbox: false,
+				rowCheckboxFields: TableData.table.rows.map((d,i) => { return { checked: false, data:d }}),
+				rowRadioFields: '',
+				editCell: '',
+				expandedColumns: [],
+				expandedRows: [],
+				sortBy: TableData.table.columns.map(() => { return { column: '', direction:'asc'} } ),
+				columnGearFilter: {},
+				selectedGearColumn: '',
+				contextMenu : [
+				  {"label":"Item 1", "callback": true},
+				  {"label":"Menu item 2"},
+				  {"label":"Apple"},
+				  {"label":"This is orange"},
+				  {"label":"Conetxt menu is fun"},
+				  {"label":"Cool"}],
+				contextVisible: false,
+				contextX: 0,
+				contextY: 0
+};
+const spreadsheetContext = createContext(defaultTablefullState);
+const dispatchSpreadsheetStateContext = createContext(undefined);
+export const SpreadsheetContextProvider = ({ children }) => {
+	const [state, dispatch] = React.useReducer(
+		(state, newValue) => ({ ...state, ...newValue }),
+		defaultTablefullState
+	);
+
+	return (
+		<spreadsheetContext.Provider value={state}>
+			<dispatchSpreadsheetStateContext.Provider value={dispatch}>
+				{children}
+			</dispatchSpreadsheetStateContext.Provider>
+		</spreadsheetContext.Provider>
+	);
+};
+export const useSpreadsheet = () => [
+	useContext(spreadsheetContext),
+	useContext(dispatchSpreadsheetStateContext)
+];
 export function ModuleMenuGroupWorkflow({
 	workflows,
 	overlayWorkflow,
@@ -21,6 +90,8 @@ export function ModuleMenuGroupWorkflow({
 const [renderedWorkflow,setRenderedWorflow]= useState(<div/>)
 	const [currentWorflow, setCurrentWorkflow] = useState();
 
+	
+	
 	useEffect(()=>{
 		setCurrentWorkflow(workflows[currentStep])
 	},[currentStep])
@@ -31,7 +102,7 @@ const [renderedWorkflow,setRenderedWorflow]= useState(<div/>)
 				currentWorflow.workflowid ==
 				"A29DCE0A-838D-47D4-AE43-D14BD4AB5C5E"
 			) {
-				 setRenderedWorflow(<ReviewManagerMain />);
+				 setRenderedWorflow(<SpreadsheetContextProvider><ReviewManagerMain /></SpreadsheetContextProvider>);
 			}
 		}
 	},[currentWorflow])

@@ -17,6 +17,7 @@ export async function getPasswordRequirements(email,password){
 	return await axios
 		.get(url)
 		.then(function(response) {
+			console.log(response)
 			return(response)
 
 		})
@@ -189,6 +190,7 @@ function useGetAuth() {
 			console.log(password + salt);
 			var hash = cryptojs.SHA256(password + salt);
 			var hashStr = hash.toString();
+			console.log(hashStr)
 			console.log(username,hashStr)
 			axios
 				.put(url, {

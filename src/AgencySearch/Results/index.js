@@ -52,6 +52,8 @@ export const AgencySearchResults = (props) => {
 	
 	
 	const filterAgencies = Agencies.filter(function(i) {
+
+
 		if(agencyType === 'all') {
 			return i.friendlyname.toLowerCase().match( searchString )
 		} else {
@@ -59,7 +61,6 @@ export const AgencySearchResults = (props) => {
 				return i.friendlyname.toLowerCase().match( searchString )
 			}
 		}
-		//return null
 	})
 
 	
